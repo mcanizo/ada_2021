@@ -22,7 +22,7 @@ services:
     ports:
     - "9042:9042"
   nifi:
-    image: apache/nifi:1.12.2
+    image: apache/nifi:1.13.2
     ports:
     - "8090:8080"
     links:
