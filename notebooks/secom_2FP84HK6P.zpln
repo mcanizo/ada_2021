@@ -1,0 +1,139 @@
+{
+  "paragraphs": [
+    {
+      "text": "from __future__ import division\r\nimport warnings\r\n\r\nimport numpy as np\r\nimport pandas as pd\r\nimport matplotlib.pyplot as plt\r\nimport seaborn as sns\r\n\r\n\r\n\r\nfrom time import time\r\n\r\nSEED \u003d 7  # random state\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-10-16 07:28:39.352",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1602833235879_-1475515256",
+      "id": "paragraph_1602833235879_-1475515256",
+      "dateCreated": "2020-10-16 07:27:15.879",
+      "dateStarted": "2020-10-16 07:28:39.358",
+      "dateFinished": "2020-10-16 07:28:39.420",
+      "status": "FINISHED"
+    },
+    {
+      "text": "url \u003d \"http://archive.ics.uci.edu/ml/machine-learning-databases/secom/secom.data\"\r\nsecom \u003d pd.read_table(url, header\u003dNone, delim_whitespace\u003dTrue)\r\n\r\nurl \u003d \"http://archive.ics.uci.edu/ml/machine-learning-databases/secom/secom_labels.data\"\r\ny \u003d pd.read_table(url, header\u003dNone, usecols\u003d[0], squeeze\u003dTrue, delim_whitespace\u003dTrue)\r\n\r\nprint (\u0027The dataset has {} observations/rows and {} variables/columns.\u0027.format(secom.shape[0], secom.shape[1]))\r\nprint (\u0027The ratio of majority class to minority class is {}:1.\u0027.format(int(y[y \u003d\u003d -1].size/y[y \u003d\u003d 1].size)))\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-10-16 07:33:19.433",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "The dataset has 1567 observations/rows and 590 variables/columns.\nThe ratio of majority class to minority class is 14:1.\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1602833250614_1968697233",
+      "id": "paragraph_1602833250614_1968697233",
+      "dateCreated": "2020-10-16 07:27:30.614",
+      "dateStarted": "2020-10-16 07:33:19.438",
+      "dateFinished": "2020-10-16 07:33:23.825",
+      "status": "FINISHED"
+    },
+    {
+      "text": "m \u003d map(lambda x: sum(secom[x].isnull()), range(secom.shape[1]))\r\nm_200thresh \u003d filter(lambda i: (m[i] \u003e 200), range(secom.shape[1]))\r\nsecom_drop_200thresh \u003d secom.dropna(subset\u003d[m_200thresh], axis\u003d1)\r\ndropthese \u003d [x for x in secom_drop_200thresh.columns.values if \\\r\n             secom_drop_200thresh[x].std() \u003d\u003d 0]\r\nsecom_drop_200thresh.drop(dropthese, axis\u003d1, inplace\u003dTrue)\r\n\r\nprint (\u0027The SECOM data set now has {} variables.\u0027.format(secom_drop_200thresh.shape[1]))\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-10-16 07:34:17.697",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m\n\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)\n\u001b[0;32m\u003cipython-input-25-33abbadb5e08\u003e\u001b[0m in \u001b[0;36m\u003cmodule\u003e\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0mm\u001b[0m \u001b[0;34m\u003d\u001b[0m \u001b[0mmap\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;32mlambda\u001b[0m \u001b[0mx\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0msum\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msecom\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mx\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0misnull\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mrange\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msecom\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mshape\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0mm_200thresh\u001b[0m \u001b[0;34m\u003d\u001b[0m \u001b[0mfilter\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;32mlambda\u001b[0m \u001b[0mi\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0;34m(\u001b[0m\u001b[0mm\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mi\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;34m\u003e\u001b[0m \u001b[0;36m200\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mrange\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msecom\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mshape\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----\u003e 3\u001b[0;31m \u001b[0msecom_drop_200thresh\u001b[0m \u001b[0;34m\u003d\u001b[0m \u001b[0msecom\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mdropna\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msubset\u001b[0m\u001b[0;34m\u003d\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mm_200thresh\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0maxis\u001b[0m\u001b[0;34m\u003d\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      4\u001b[0m dropthese \u003d [x for x in secom_drop_200thresh.columns.values if \\\n\u001b[1;32m      5\u001b[0m              secom_drop_200thresh[x].std() \u003d\u003d 0]\n\n\u001b[0;32m/opt/conda/lib/python3.7/site-packages/pandas/core/frame.py\u001b[0m in \u001b[0;36mdropna\u001b[0;34m(self, axis, how, thresh, subset, inplace)\u001b[0m\n\u001b[1;32m   4837\u001b[0m                 \u001b[0mcheck\u001b[0m \u001b[0;34m\u003d\u001b[0m \u001b[0mindices\u001b[0m \u001b[0;34m\u003d\u003d\u001b[0m \u001b[0;34m-\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   4838\u001b[0m                 \u001b[0;32mif\u001b[0m \u001b[0mcheck\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0many\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-\u003e 4839\u001b[0;31m                     \u001b[0;32mraise\u001b[0m \u001b[0mKeyError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mlist\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mnp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcompress\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcheck\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0msubset\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   4840\u001b[0m                 \u001b[0magg_obj\u001b[0m \u001b[0;34m\u003d\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mtake\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mindices\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0maxis\u001b[0m\u001b[0;34m\u003d\u001b[0m\u001b[0magg_axis\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   4841\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\n\u001b[0;31mKeyError\u001b[0m: [\u003cfilter object at 0x7f3b0c4a42e8\u003e]"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1602833330937_-1460555339",
+      "id": "paragraph_1602833330937_-1460555339",
+      "dateCreated": "2020-10-16 07:28:50.937",
+      "dateStarted": "2020-10-16 07:34:17.701",
+      "dateFinished": "2020-10-16 07:34:17.771",
+      "status": "ERROR"
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1602833463886_1626800226",
+      "id": "paragraph_1602833463886_1626800226",
+      "dateCreated": "2020-10-16 07:31:03.887",
+      "status": "READY"
+    }
+  ],
+  "name": "secom",
+  "id": "2FP84HK6P",
+  "defaultInterpreterGroup": "python",
+  "version": "0.9.0-preview1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
