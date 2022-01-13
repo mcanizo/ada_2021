@@ -12,7 +12,7 @@ services:
      - ZEPPELIN_JAVA_OPTS=-Dcassandra.hosts=cassandra
     volumes:
     - ./data:/zeppelin/data
-    - ./notebooks:/zeppelin/notebook  
+    - ./notebooks:/opt/zeppelin/notebook
     links: 
     - cassandra
     depends_on: 
