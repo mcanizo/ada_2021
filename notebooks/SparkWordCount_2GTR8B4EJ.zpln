@@ -1,0 +1,711 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n# Spark WordCount tutorial\nThis is a small tutorial to show how Apache Spark works. In this lesson, we will use an [Apache Zeppelin notebook](https://zeppelin.incubator.apache.org/) to interact with Spark and execute the wordcount exercise, which consists on counting how many times a word appears within a given text.\n\n*Please note this is an unofficial demo and tutorial.*\n\n### Apache Spark\nApache Spark is a fast and general engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.\nMore details can be found here [http://spark.apache.org](http://spark.apache.org/).",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 15:47:45.570",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eSpark WordCount tutorial\u003c/h1\u003e\n\u003cp\u003eThis is a small tutorial to show how Apache Spark works. In this lesson, we will use an \u003ca href\u003d\"https://zeppelin.incubator.apache.org/\"\u003eApache Zeppelin notebook\u003c/a\u003e to interact with Spark and execute the wordcount exercise, which consists on counting how many times a word appears within a given text.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003ePlease note this is an unofficial demo and tutorial.\u003c/em\u003e\u003c/p\u003e\n\u003ch3\u003eApache Spark\u003c/h3\u003e\n\u003cp\u003eApache Spark is a fast and general engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.\u003cbr /\u003e\nMore details can be found here \u003ca href\u003d\"http://spark.apache.org/\"\u003ehttp://spark.apache.org\u003c/a\u003e.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902423_1897614702",
+      "id": "paragraph_1642005276698_1382065343",
+      "dateCreated": "2022-01-12 17:18:22.423",
+      "dateStarted": "2022-01-13 15:47:45.570",
+      "dateFinished": "2022-01-13 15:47:47.872",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sh \npwd\nls -l",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 15:42:21.552",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "/opt/zeppelin\ntotal 58276\ndrwxr-xr-x  2 root     root     4096 Feb 10  2021 bin\ndrwxrwxr-x  1 root     root     4096 Jan 13 15:39 conf\ndrwxr-xr-x 37 root     root     4096 Feb 10  2021 interpreter\ndrwxr-xr-x  3 root     root     4096 Feb 10  2021 k8s\ndrwxr-xr-x  3 root     root    20480 Feb 10  2021 lib\n-rw-r--r--  1 root     root    65026 Dec 20  2020 LICENSE\ndrwxr-xr-x  2 root     root     4096 Feb 10  2021 licenses\ndrwxrwxr-x  2 root     root     4096 Feb 10  2021 logs\ndrwxrwxrwx  1 root     root      512 Jan 13  2022 notebook\n-rw-r--r--  1 root     root     5808 Dec 20  2020 NOTICE\ndrwxr-xr-x  4 root     root     4096 Feb 10  2021 plugins\n-rw-r--r--  1 root     root     1438 Dec 20  2020 README.md\ndrwxrwxr-x  2 root     root     4096 Feb 10  2021 run\ndrwxr-xr-x  3 zeppelin root     4096 Jan 13 15:35 webapps\n-rw-r--r--  1 root     root 29695353 Dec 20  2020 zeppelin-web-0.9.0.war\n-rw-r--r--  1 root     root 29843280 Dec 20  2020 zeppelin-web-angular-0.9.0.war\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902425_2036485090",
+      "id": "paragraph_1642002472246_1193135330",
+      "dateCreated": "2022-01-12 17:18:22.425",
+      "dateStarted": "2022-01-13 15:42:21.584",
+      "dateFinished": "2022-01-13 15:42:21.642",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n## 1.- Load the text file\nUse the SparkContext (sc) to load the data thought the textFile method.",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-12 17:18:57.684",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e1.- Load the text file\u003c/h2\u003e\n\u003cp\u003eUse the SparkContext (sc) to load the data thought the textFile method.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902425_1062752479",
+      "id": "paragraph_1642005270480_1673222509",
+      "dateCreated": "2022-01-12 17:18:22.425",
+      "dateStarted": "2022-01-12 17:18:57.768",
+      "dateFinished": "2022-01-12 17:18:57.835",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nval dataRdd \u003d sc.textFile(\"/zeppelin/data/wordcount.txt\");\ndataRdd.take(10).foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-12 17:18:57.868",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "word count from Wikipedia the free encyclopedia\nthe word count is the number of words in a document or passage of text Word counting may be needed when a text\nis required to stay within certain numbers of words This may particularly be the case in academia legal\nproceedings journalism and advertising Word count is commonly used by translators to determine the price for\nthe translation job Word counts may also be used to calculate measures of readability and to measure typing\nand reading speeds usually in words per minute When converting character counts to words a measure of five or\nsix characters to a word is generally used Contents Details and variations of definition Software In fiction\nIn non fiction See also References Sources External links Details and variations of definition\nThis section does not cite any references or sources Please help improve this section by adding citations to\nreliable sources Unsourced material may be challenged and removed\n\u001b[1m\u001b[34mdataRdd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d /zeppelin/data/wordcount.txt MapPartitionsRDD[1] at textFile at \u003cconsole\u003e:26\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d0"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902425_1203258445",
+      "id": "paragraph_1642002573920_339913181",
+      "dateCreated": "2022-01-12 17:18:22.425",
+      "dateStarted": "2022-01-12 17:18:57.912",
+      "dateFinished": "2022-01-12 17:19:25.540",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n## 2.- Get each word of the text file\nAll the words are separated by a white space, so we split each line by \" \" to get all the words. As the output of each split is an array of words, we use the \"_flatmap_\" method to return all the words separated intead or returnig a list of words.\n\nHere is an example to show how map and flatMap methods return different data types:\n\n```\nmap(line \u003d\u003e line.split(\" \")) -\u003e [\n                                    [\"word\", \"count\", \"from\", \"Wikipedia\", \"the\", \"free\", \"encyclopedia\"]]\n                                    [\"the\", \"word\", \"count\", \"is\", \"the\", \"number\", \"of\"...]\n                                ]\n\nflatMap(line \u003d\u003e line.split(\" \")) -\u003e [\"word\", \"count\", \"from\", \"Wikipedia\", \"the\", \"free\", \"encyclopedia\", \"the\", \"word\", \"count\", \"is\", \"the\", \"number\", \"of\"...]\n```",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 15:44:40.345",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e2.- Get each word of the text file\u003c/h2\u003e\n\u003cp\u003eAll the words are separated by a white space, so we split each line by \u0026quot; \u0026quot; to get all the words. As the output of each split is an array of words, we use the \u0026ldquo;\u003cem\u003eflatmap\u003c/em\u003e\u0026rdquo; method to return all the words separated intead or returnig a list of words.\u003c/p\u003e\n\u003cp\u003eHere is an example to show how map and flatMap methods return different data types:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003emap(line \u003d\u0026gt; line.split(\u0026quot; \u0026quot;)) -\u0026gt; [\n                                    [\u0026quot;word\u0026quot;, \u0026quot;count\u0026quot;, \u0026quot;from\u0026quot;, \u0026quot;Wikipedia\u0026quot;, \u0026quot;the\u0026quot;, \u0026quot;free\u0026quot;, \u0026quot;encyclopedia\u0026quot;]]\n                                    [\u0026quot;the\u0026quot;, \u0026quot;word\u0026quot;, \u0026quot;count\u0026quot;, \u0026quot;is\u0026quot;, \u0026quot;the\u0026quot;, \u0026quot;number\u0026quot;, \u0026quot;of\u0026quot;...]\n                                ]\n\nflatMap(line \u003d\u0026gt; line.split(\u0026quot; \u0026quot;)) -\u0026gt; [\u0026quot;word\u0026quot;, \u0026quot;count\u0026quot;, \u0026quot;from\u0026quot;, \u0026quot;Wikipedia\u0026quot;, \u0026quot;the\u0026quot;, \u0026quot;free\u0026quot;, \u0026quot;encyclopedia\u0026quot;, \u0026quot;the\u0026quot;, \u0026quot;word\u0026quot;, \u0026quot;count\u0026quot;, \u0026quot;is\u0026quot;, \u0026quot;the\u0026quot;, \u0026quot;number\u0026quot;, \u0026quot;of\u0026quot;...]\n\u003c/code\u003e\u003c/pre\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902425_940790126",
+      "id": "paragraph_1642005778076_1794374357",
+      "dateCreated": "2022-01-12 17:18:22.426",
+      "dateStarted": "2022-01-13 15:44:40.345",
+      "dateFinished": "2022-01-13 15:44:40.367",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nval splitDataRdd \u003d dataRdd.flatMap(line \u003d\u003e line.split(\" \"));\nsplitDataRdd.take(10).foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-12 17:19:25.766",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "word\ncount\nfrom\nWikipedia\nthe\nfree\nencyclopedia\nthe\nword\ncount\n\u001b[1m\u001b[34msplitDataRdd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d MapPartitionsRDD[2] at flatMap at \u003cconsole\u003e:26\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d1"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902426_1003081458",
+      "id": "paragraph_1642003560434_1548679836",
+      "dateCreated": "2022-01-12 17:18:22.426",
+      "dateStarted": "2022-01-12 17:19:25.903",
+      "dateFinished": "2022-01-12 17:19:27.357",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n## 3.- Associate a count of 1 to each word\nTo count how many time a word appears in the text file, we need to first create a tuple (key/value) where _key\u003dword_ and _value\u003d1_ so that we can then make the sum.",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 15:44:50.365",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e3.- Associate a count of 1 to each word\u003c/h2\u003e\n\u003cp\u003eTo count how many time a word appears in the text file, we need to first create a tuple (key/value) where \u003cem\u003ekey\u003dword\u003c/em\u003e and \u003cem\u003evalue\u003d1\u003c/em\u003e so that we can then make the sum.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902426_1336629683",
+      "id": "paragraph_1642006220565_891540538",
+      "dateCreated": "2022-01-12 17:18:22.426",
+      "dateStarted": "2022-01-13 15:44:50.365",
+      "dateFinished": "2022-01-13 15:44:50.385",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nval wordTupleRdd \u003d splitDataRdd.map(word \u003d\u003e (word, 1))\nwordTupleRdd.take(10).foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-12 17:19:27.661",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(word,1)\n(count,1)\n(from,1)\n(Wikipedia,1)\n(the,1)\n(free,1)\n(encyclopedia,1)\n(the,1)\n(word,1)\n(count,1)\n\u001b[1m\u001b[34mwordTupleRdd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Int)]\u001b[0m \u003d MapPartitionsRDD[3] at map at \u003cconsole\u003e:26\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d2"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902426_1358312422",
+      "id": "paragraph_1642003580337_517589409",
+      "dateCreated": "2022-01-12 17:18:22.426",
+      "dateStarted": "2022-01-12 17:19:27.752",
+      "dateFinished": "2022-01-12 17:19:29.267",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n## 4.- Count the words\nCount how many times each word appears. To do so, we have to group the data by key (word) and then add all they values (1s).\n\nUse the _reduceByKey_ method to apply a function to each group.",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 15:44:55.447",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e4.- Count the words\u003c/h2\u003e\n\u003cp\u003eCount how many times each word appears. To do so, we have to group the data by key (word) and then add all they values (1s).\u003c/p\u003e\n\u003cp\u003eUse the \u003cem\u003ereduceByKey\u003c/em\u003e method to apply a function to each group.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902426_556286720",
+      "id": "paragraph_1642006595575_707279339",
+      "dateCreated": "2022-01-12 17:18:22.426",
+      "dateStarted": "2022-01-13 15:44:55.447",
+      "dateFinished": "2022-01-13 15:44:55.464",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nval wordCountRdd \u003d wordTupleRdd.reduceByKey((a, b) \u003d\u003e a + b)\n// val wordCountRdd \u003d wordTupleRdd.reduceByKey(_+_) // this is equivalent to the previous line\nwordCountRdd.take(10).foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-12 17:19:29.577",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(reading,1)\n(under,1)\n(Fantasy,1)\n(Short,1)\n(Fiction,1)\n(its,3)\n(Novelist,1)\n(todays,1)\n(acceptable,2)\n(improve,1)\n\u001b[1m\u001b[34mwordCountRdd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Int)]\u001b[0m \u003d ShuffledRDD[4] at reduceByKey at \u003cconsole\u003e:26\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d3"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902426_1532944035",
+      "id": "paragraph_1642004661745_1425659853",
+      "dateCreated": "2022-01-12 17:18:22.426",
+      "dateStarted": "2022-01-12 17:19:29.671",
+      "dateFinished": "2022-01-12 17:19:32.110",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n# 5.- Order words by count",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 15:45:06.538",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e5.- Order words by count\u003c/h1\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902426_1899431516",
+      "id": "paragraph_1642006883236_653061522",
+      "dateCreated": "2022-01-12 17:18:22.427",
+      "dateStarted": "2022-01-13 15:45:06.538",
+      "dateFinished": "2022-01-13 15:45:06.551",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\n//Sort by value in descending order. For ascending order remove \u0027false\u0027 argument from sortBy\nval descOrderedWordCountRdd \u003d wordCountRdd.sortBy(tuple \u003d\u003e tuple._2, false)\n//for ascending order by value\nval ascOrderedWordCountRdd \u003d wordCountRdd.sortBy(tuple \u003d\u003e tuple._2)\n\nprintln(\"Words ordered in DESC mode\")\ndescOrderedWordCountRdd.take(10).foreach(println)\nprintln(\"\\n\\nWords ordered in ASC mode\")\nascOrderedWordCountRdd.take(10).foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-12 17:21:38.579",
+      "progress": 60,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Words ordered in DESC mode\n(the,38)\n(a,28)\n(of,25)\n(word,24)\n(and,23)\n(words,21)\n(is,19)\n(to,18)\n(or,11)\n(count,11)\n\n\nWords ordered in ASC mode\n(reading,1)\n(under,1)\n(Fantasy,1)\n(Short,1)\n(Fiction,1)\n(Novelist,1)\n(todays,1)\n(improve,1)\n(have,1)\n(literary,1)\n\u001b[1m\u001b[34mdescOrderedWordCountRdd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Int)]\u001b[0m \u003d MapPartitionsRDD[39] at sortBy at \u003cconsole\u003e:30\n\u001b[1m\u001b[34mascOrderedWordCountRdd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Int)]\u001b[0m \u003d MapPartitionsRDD[44] at sortBy at \u003cconsole\u003e:32\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d16"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d17"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d18"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d19"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902431_1767658235",
+      "id": "paragraph_1642004837788_486761026",
+      "dateCreated": "2022-01-12 17:18:22.431",
+      "dateStarted": "2022-01-12 17:21:38.617",
+      "dateFinished": "2022-01-12 17:21:39.840",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n## 6.- All in one statement\nYou can concatenate the functions using a \".\" between them",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 15:46:20.404",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e6.- All in one statement\u003c/h2\u003e\n\u003cp\u003eYou can concatenate the functions using a \u0026ldquo;.\u0026rdquo; between them\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642088720064_747850888",
+      "id": "paragraph_1642088720064_747850888",
+      "dateCreated": "2022-01-13 15:45:20.065",
+      "dateStarted": "2022-01-13 15:46:20.404",
+      "dateFinished": "2022-01-13 15:46:20.425",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nval words \u003d sc.textFile(\"/zeppelin/data/wordcount.txt\")\n    .flatMap(line \u003d\u003e line.split(\" \"))\n    .map(word \u003d\u003e (word, 1))\n    .reduceByKey((a, b) \u003d\u003e a + b)\n    .sortBy(tuple \u003d\u003e tuple._2, false)\n    .take(10)\n    .foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-12 17:21:54.403",
+      "progress": 50,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(the,38)\n(a,28)\n(of,25)\n(word,24)\n(and,23)\n(words,21)\n(is,19)\n(to,18)\n(or,11)\n(count,11)\n\u001b[1m\u001b[34mwords\u001b[0m: \u001b[1m\u001b[32mUnit\u001b[0m \u003d ()\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d20"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d21"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642007902431_489082825",
+      "id": "paragraph_1642004975171_1323514245",
+      "dateCreated": "2022-01-12 17:18:22.431",
+      "dateStarted": "2022-01-12 17:21:54.442",
+      "dateFinished": "2022-01-12 17:21:56.722",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-12 17:21:54.442",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642008114441_773370074",
+      "id": "paragraph_1642008114441_773370074",
+      "dateCreated": "2022-01-12 17:21:54.442",
+      "status": "READY"
+    }
+  ],
+  "name": "SparkWordCount",
+  "id": "2GTR8B4EJ",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
