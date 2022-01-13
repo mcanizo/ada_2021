@@ -1,0 +1,541 @@
+{
+  "paragraphs": [
+    {
+      "title": "1 - Markdown",
+      "text": "%md \n# Using Apache Spark Dataframes\n\nThis is a demonstration showing how to use [Apache Zeppelin notebook](https://zeppelin.incubator.apache.org/) to interact with [Apache Cassandra](http://cassandra.apache.org/) NoSQL database through [Apache Spark](http://spark.apache.org/) or directly through Cassandra CQL language.\n\n*Please note this is an unofficial demo and tutorial.*\n\n### Apache Spark\n\nApache Spark is a fast and general engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.\nMore details can be found here [http://spark.apache.org](http://spark.apache.org/).\nIt is  used for Cassandra data processing needs (ETL, transformations, analytics ...).\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 16:59:32.228",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eUsing Apache Spark Dataframes\u003c/h1\u003e\n\u003cp\u003eThis is a demonstration showing how to use \u003ca href\u003d\"https://zeppelin.incubator.apache.org/\"\u003eApache Zeppelin notebook\u003c/a\u003e to interact with \u003ca href\u003d\"http://cassandra.apache.org/\"\u003eApache Cassandra\u003c/a\u003e NoSQL database through \u003ca href\u003d\"http://spark.apache.org/\"\u003eApache Spark\u003c/a\u003e or directly through Cassandra CQL language.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003ePlease note this is an unofficial demo and tutorial.\u003c/em\u003e\u003c/p\u003e\n\u003ch3\u003eApache Spark\u003c/h3\u003e\n\u003cp\u003eApache Spark is a fast and general engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.\u003cbr /\u003e\nMore details can be found here \u003ca href\u003d\"http://spark.apache.org/\"\u003ehttp://spark.apache.org\u003c/a\u003e.\u003cbr /\u003e\nIt is  used for Cassandra data processing needs (ETL, transformations, analytics \u0026hellip;).\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642093014903_676680920",
+      "id": "20160113-181412_1813689583",
+      "dateCreated": "2022-01-13 16:56:54.903",
+      "dateStarted": "2022-01-13 16:59:32.258",
+      "dateFinished": "2022-01-13 16:59:32.274",
+      "status": "FINISHED"
+    },
+    {
+      "title": "2 - Shell command example",
+      "text": "%sh pwd\nls -l",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 16:59:32.357",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "/opt/zeppelin\ntotal 58276\ndrwxr-xr-x  2 root     root     4096 Feb 10  2021 bin\ndrwxrwxr-x  1 root     root     4096 Jan 13 16:56 conf\ndrwxr-xr-x 37 root     root     4096 Feb 10  2021 interpreter\ndrwxr-xr-x  3 root     root     4096 Feb 10  2021 k8s\ndrwxr-xr-x  3 root     root    20480 Feb 10  2021 lib\n-rw-r--r--  1 root     root    65026 Dec 20  2020 LICENSE\ndrwxr-xr-x  2 root     root     4096 Feb 10  2021 licenses\ndrwxrwxr-x  2 root     root     4096 Feb 10  2021 logs\ndrwxrwxrwx  1 root     root      512 Jan 13  2022 notebook\n-rw-r--r--  1 root     root     5808 Dec 20  2020 NOTICE\ndrwxr-xr-x  4 root     root     4096 Feb 10  2021 plugins\n-rw-r--r--  1 root     root     1438 Dec 20  2020 README.md\ndrwxrwxr-x  2 root     root     4096 Feb 10  2021 run\ndrwxr-xr-x  3 zeppelin root     4096 Jan 13 15:35 webapps\n-rw-r--r--  1 root     root 29695353 Dec 20  2020 zeppelin-web-0.9.0.war\n-rw-r--r--  1 root     root 29843280 Dec 20  2020 zeppelin-web-angular-0.9.0.war\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642093014904_1282369120",
+      "id": "20160113-181412_1623555306",
+      "dateCreated": "2022-01-13 16:56:54.904",
+      "dateStarted": "2022-01-13 16:59:32.393",
+      "dateFinished": "2022-01-13 16:59:34.739",
+      "status": "FINISHED"
+    },
+    {
+      "title": "4 - Download demo CSV file",
+      "text": "%sh\n\nwget https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv\n\n# Or download direclty the demo CSV file from https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 16:59:34.806",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "--2022-01-13 16:59:34--  https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv\nResolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.111.133, ...\nConnecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 6851577 (6.5M) [text/plain]\nSaving to: ‘albums.csv’\n\n     0K .......... .......... .......... .......... ..........  0% 1.08M 6s\n    50K .......... .......... .......... .......... ..........  1% 3.52M 4s\n   100K .......... .......... .......... .......... ..........  2% 2.50M 3s\n   150K .......... .......... .......... .......... ..........  2% 3.54M 3s\n   200K .......... .......... .......... .......... ..........  3% 5.96M 3s\n   250K .......... .......... .......... .......... ..........  4% 4.80M 2s\n   300K .......... .......... .......... .......... ..........  5% 2.96M 2s\n   350K .......... .......... .......... .......... ..........  5% 1.91M 2s\n   400K .......... .......... .......... .......... ..........  6%  141M 2s\n   450K .......... .......... .......... .......... ..........  7% 11.9M 2s\n   500K .......... .......... .......... .......... ..........  8% 6.42M 2s\n   550K .......... .......... .......... .......... ..........  8% 3.75M 2s\n   600K .......... .......... .......... .......... ..........  9% 15.8M 2s\n   650K .......... .......... .......... .......... .......... 10% 59.9M 2s\n   700K .......... .......... .......... .......... .......... 11% 3.64M 2s\n   750K .......... .......... .......... .......... .......... 11% 11.2M 1s\n   800K .......... .......... .......... .......... .......... 12% 4.87M 1s\n   850K .......... .......... .......... .......... .......... 13% 8.05M 1s\n   900K .......... .......... .......... .......... .......... 14% 15.5M 1s\n   950K .......... .......... .......... .......... .......... 14% 12.2M 1s\n  1000K .......... .......... .......... .......... .......... 15% 5.93M 1s\n  1050K .......... .......... .......... .......... .......... 16% 12.0M 1s\n  1100K .......... .......... .......... .......... .......... 17% 28.6M 1s\n  1150K .......... .......... .......... .......... .......... 17% 5.72M 1s\n  1200K .......... .......... .......... .......... .......... 18% 23.0M 1s\n  1250K .......... .......... .......... .......... .......... 19% 24.9M 1s\n  1300K .......... .......... .......... .......... .......... 20% 36.6M 1s\n  1350K .......... .......... .......... .......... .......... 20% 3.36M 1s\n  1400K .......... .......... .......... .......... .......... 21% 26.5M 1s\n  1450K .......... .......... .......... .......... .......... 22% 6.16M 1s\n  1500K .......... .......... .......... .......... .......... 23% 35.5M 1s\n  1550K .......... .......... .......... .......... .......... 23% 17.8M 1s\n  1600K .......... .......... .......... .......... .......... 24% 43.8M 1s\n  1650K .......... .......... .......... .......... .......... 25% 10.6M 1s\n  1700K .......... .......... .......... .......... .......... 26% 6.41M 1s\n  1750K .......... .......... .......... .......... .......... 26% 51.1M 1s\n  1800K .......... .......... .......... .......... .......... 27% 15.8M 1s\n  1850K .......... .......... .......... .......... .......... 28% 13.9M 1s\n  1900K .......... .......... .......... .......... .......... 29% 4.65M 1s\n  1950K .......... .......... .......... .......... .......... 29% 24.8M 1s\n  2000K .......... .......... .......... .......... .......... 30% 9.14M 1s\n  2050K .......... .......... .......... .......... .......... 31% 5.99M 1s\n  2100K .......... .......... .......... .......... .......... 32% 12.7M 1s\n  2150K .......... .......... .......... .......... .......... 32% 10.2M 1s\n  2200K .......... .......... .......... .......... .......... 33%  121M 1s\n  2250K .......... .......... .......... .......... .......... 34%  164M 1s\n  2300K .......... .......... .......... .......... .......... 35% 1.43M 1s\n  2350K .......... .......... .......... .......... .......... 35% 6.17M 1s\n  2400K .......... .......... .......... .......... .......... 36% 14.3M 1s\n  2450K .......... .......... .......... .......... .......... 37% 14.4M 1s\n  2500K .......... .......... .......... .......... .......... 38% 9.91M 1s\n  2550K .......... .......... .......... .......... .......... 38% 5.52M 1s\n  2600K .......... .......... .......... .......... .......... 39% 3.62M 1s\n  2650K .......... .......... .......... .......... .......... 40% 8.77M 1s\n  2700K .......... .......... .......... .......... .......... 41% 16.2M 1s\n  2750K .......... .......... .......... .......... .......... 41% 6.87M 1s\n  2800K .......... .......... .......... .......... .......... 42% 41.8M 1s\n  2850K .......... .......... .......... .......... .......... 43% 4.27M 1s\n  2900K .......... .......... .......... .......... .......... 44% 16.7M 1s\n  2950K .......... .......... .......... .......... .......... 44%  164M 1s\n  3000K .......... .......... .......... .......... .......... 45% 12.0M 1s\n  3050K .......... .......... .......... .......... .......... 46% 13.2M 1s\n  3100K .......... .......... .......... .......... .......... 47% 30.0M 1s\n  3150K .......... .......... .......... .......... .......... 47% 8.89M 0s\n  3200K .......... .......... .......... .......... .......... 48% 18.9M 0s\n  3250K .......... .......... .......... .......... .......... 49% 6.49M 0s\n  3300K .......... .......... .......... .......... .......... 50%  149M 0s\n  3350K .......... .......... .......... .......... .......... 50% 57.4M 0s\n  3400K .......... .......... .......... .......... .......... 51% 13.6M 0s\n  3450K .......... .......... .......... .......... .......... 52% 9.66M 0s\n  3500K .......... .......... .......... .......... .......... 53% 78.5M 0s\n  3550K .......... .......... .......... .......... .......... 53% 15.6M 0s\n  3600K .......... .......... .......... .......... .......... 54% 11.8M 0s\n  3650K .......... .......... .......... .......... .......... 55% 7.35M 0s\n  3700K .......... .......... .......... .......... .......... 56% 11.6M 0s\n  3750K .......... .......... .......... .......... .......... 56% 35.4M 0s\n  3800K .......... .......... .......... .......... .......... 57% 14.7M 0s\n  3850K .......... .......... .......... .......... .......... 58% 31.8M 0s\n  3900K .......... .......... .......... .......... .......... 59% 6.63M 0s\n  3950K .......... .......... .......... .......... .......... 59%  128M 0s\n  4000K .......... .......... .......... .......... .......... 60%  184M 0s\n  4050K .......... .......... .......... .......... .......... 61% 8.16M 0s\n  4100K .......... .......... .......... .......... .......... 62% 15.7M 0s\n  4150K .......... .......... .......... .......... .......... 62% 16.8M 0s\n  4200K .......... .......... .......... .......... .......... 63% 11.9M 0s\n  4250K .......... .......... .......... .......... .......... 64% 15.2M 0s\n  4300K .......... .......... .......... .......... .......... 65% 36.5M 0s\n  4350K .......... .......... .......... .......... .......... 65% 23.0M 0s\n  4400K .......... .......... .......... .......... .......... 66% 22.8M 0s\n  4450K .......... .......... .......... .......... .......... 67% 4.42M 0s\n  4500K .......... .......... .......... .......... .......... 68% 65.4M 0s\n  4550K .......... .......... .......... .......... .......... 68%  177M 0s\n  4600K .......... .......... .......... .......... .......... 69% 15.6M 0s\n  4650K .......... .......... .......... .......... .......... 70%  107M 0s\n  4700K .......... .......... .......... .......... .......... 70% 7.84M 0s\n  4750K .......... .......... .......... .......... .......... 71% 7.46M 0s\n  4800K .......... .......... .......... .......... .......... 72%  124M 0s\n  4850K .......... .......... .......... .......... .......... 73% 20.7M 0s\n  4900K .......... .......... .......... .......... .......... 73%  173M 0s\n  4950K .......... .......... .......... .......... .......... 74% 5.97M 0s\n  5000K .......... .......... .......... .......... .......... 75% 5.84M 0s\n  5050K .......... .......... .......... .......... .......... 76%  130M 0s\n  5100K .......... .......... .......... .......... .......... 76%  170M 0s\n  5150K .......... .......... .......... .......... .......... 77%  176M 0s\n  5200K .......... .......... .......... .......... .......... 78% 53.3M 0s\n  5250K .......... .......... .......... .......... .......... 79% 4.67M 0s\n  5300K .......... .......... .......... .......... .......... 79%  144M 0s\n  5350K .......... .......... .......... .......... .......... 80%  184M 0s\n  5400K .......... .......... .......... .......... .......... 81%  191M 0s\n  5450K .......... .......... .......... .......... .......... 82% 9.03M 0s\n  5500K .......... .......... .......... .......... .......... 82% 27.1M 0s\n  5550K .......... .......... .......... .......... .......... 83% 8.54M 0s\n  5600K .......... .......... .......... .......... .......... 84% 5.16M 0s\n  5650K .......... .......... .......... .......... .......... 85% 6.45M 0s\n  5700K .......... .......... .......... .......... .......... 85% 7.98M 0s\n  5750K .......... .......... .......... .......... .......... 86%  194M 0s\n  5800K .......... .......... .......... .......... .......... 87% 7.34M 0s\n  5850K .......... .......... .......... .......... .......... 88%  147M 0s\n  5900K .......... .......... .......... .......... .......... 88% 4.78M 0s\n  5950K .......... .......... .......... .......... .......... 89% 46.7M 0s\n  6000K .......... .......... .......... .......... .......... 90% 24.7M 0s\n  6050K .......... .......... .......... .......... .......... 91% 24.7M 0s\n  6100K .......... .......... .......... .......... .......... 91% 7.83M 0s\n  6150K .......... .......... .......... .......... .......... 92% 13.4M 0s\n  6200K .......... .......... .......... .......... .......... 93% 12.6M 0s\n  6250K .......... .......... .......... .......... .......... 94% 8.87M 0s\n  6300K .......... .......... .......... .......... .......... 94% 77.0M 0s\n  6350K .......... .......... .......... .......... .......... 95%  124M 0s\n  6400K .......... .......... .......... .......... .......... 96% 20.9M 0s\n  6450K .......... .......... .......... .......... .......... 97% 11.5M 0s\n  6500K .......... .......... .......... .......... .......... 97% 14.3M 0s\n  6550K .......... .......... .......... .......... .......... 98% 10.8M 0s\n  6600K .......... .......... .......... .......... .......... 99% 17.1M 0s\n  6650K .......... .......... .......... ..........           100% 89.1M\u003d0.7s\n\n2022-01-13 16:59:36 (9.42 MB/s) - ‘albums.csv’ saved [6851577/6851577]\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642093014904_106927213",
+      "id": "20160123-165554_1618215392",
+      "dateCreated": "2022-01-13 16:56:54.904",
+      "dateStarted": "2022-01-13 16:59:34.843",
+      "dateFinished": "2022-01-13 16:59:36.411",
+      "status": "FINISHED"
+    },
+    {
+      "title": "4 - Spark :  load cSV File in dataFrame",
+      "text": "%spark\n\n//Display Spark version used\n\nval df_albums \u003d sqlContext.read\n.format(\"csv\")\n.option(\"header\", \"true\")\n.load(\"albums.csv\")\n.cache\n\n//If you want to store albums.csv in a specific folder run\n//val df_albums \u003d sqlContext.read\n//.format(\"com.databricks.spark.csv\")\n//.option(\"header\", \"true\")\n//.load(\"/your_path/albums.csv\")\n//.cache",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 16:59:36.453",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdf_albums\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m \u003d [artist: string, album: string ... 4 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d0"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642093014906_725249644",
+      "id": "20160113-181412_829518708",
+      "dateCreated": "2022-01-13 16:56:54.906",
+      "dateStarted": "2022-01-13 16:59:36.496",
+      "dateFinished": "2022-01-13 16:59:58.186",
+      "status": "FINISHED"
+    },
+    {
+      "title": "5 - Spark : Print Schema, Show, Filter, GroupBy dataFrame",
+      "text": "df_albums.printSchema()\ndf_albums.show()\ndf_albums.filter(\"year \u003e 2000\").show()\ndf_albums.groupBy(\"year\").count().show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 16:59:58.266",
+      "progress": 28,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- artist: string (nullable \u003d true)\n |-- album: string (nullable \u003d true)\n |-- year: string (nullable \u003d true)\n |-- country: string (nullable \u003d true)\n |-- quality: string (nullable \u003d true)\n |-- status: string (nullable \u003d true)\n\n+----------+--------------------+----+--------------+-------+--------+\n|    artist|               album|year|       country|quality|  status|\n+----------+--------------------+----+--------------+-------+--------+\n|Ultra Naté|Stranger Than Fic...|2001|           USA| normal|Official|\n|Ultra Naté|                Free|1997|   Netherlands| normal|Official|\n|Ultra Naté|          Is It Love|1992|           USA| normal|Official|\n|Ultra Naté|New Kind of Medicine|1998|United Kingdom| normal|Official|\n|Ultra Naté|                Free|1997|     Australia| normal|Official|\n|Ultra Naté|Free: The Mood II...|1997|       Denmark| normal|Official|\n|Ultra Naté|           Rejoicing|1991|           USA| normal|Official|\n|Ultra Naté|        Found a Cure|1998|United Kingdom| normal|Official|\n|Ultra Naté| Situation: Critical|1998|United Kingdom| normal|Official|\n|Ultra Naté|                Free|1998|  South Africa| normal|Official|\n|Ultra Naté|       Joy / Show Me|1993|           USA| normal|Official|\n|Ultra Naté|           Get It Up|2001|       Germany| normal|Official|\n|Ultra Naté|One Woman\u0027s Insanity|1993|           USA| normal|Official|\n|Ultra Naté|  Situation:Critical|1998|           USA| normal|Official|\n|Ultra Naté|              Desire|2000|       Germany| normal|Official|\n|Ultra Naté|New Kind of Medic...|1998|United Kingdom| normal|Official|\n|Ultra Naté|Blue Notes in the...|1991|           USA| normal|Official|\n|    Object|   The Ethane Asylum|2008|           USA| normal|Official|\n|    Object|  Part-Time Paranoia|2001|       Germany| normal|Official|\n|    Object| The Reflecting Skin|  -1|       Unknown| normal|Official|\n+----------+--------------------+----+--------------+-------+--------+\nonly showing top 20 rows\n\n+--------------------+--------------------+----+--------------+-------+--------+\n|              artist|               album|year|       country|quality|  status|\n+--------------------+--------------------+----+--------------+-------+--------+\n|          Ultra Naté|Stranger Than Fic...|2001|           USA| normal|Official|\n|          Ultra Naté|           Get It Up|2001|       Germany| normal|Official|\n|              Object|   The Ethane Asylum|2008|           USA| normal|Official|\n|              Object|  Part-Time Paranoia|2001|       Germany| normal|Official|\n|              Hayden|     In Field \u0026 Town|2008|        Canada| normal|Official|\n|              Hayden|   Elk-Lake Serenade|2004|        Canada| normal|Official|\n|              Hayden|            Us Alone|2013|           USA| normal|Official|\n|              Hayden|Skyscraper Nation...|2001|        Canada| normal|Official|\n|              Hayden|Live at Convocati...|2002|           USA| normal|Official|\n|              Hayden|            Hey Love|2015|        Canada| normal|Official|\n|              Hayden|The Place Where W...|2009|        Canada| normal|Official|\n|Get Cape. Wear Ca...|I-Spy / Call Me I...|2006|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|Get Cape. Wear Ca...|2005|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|       Find the Time|2008|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|   War of the Worlds|2006|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|Searching for the...|2008|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|Get Cape. Wear Ca...|2010|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|    Keep Singing Out|2008|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|                Maps|2012|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|The Chronicles of...|2006|United Kingdom| normal|Official|\n+--------------------+--------------------+----+--------------+-------+--------+\nonly showing top 20 rows\n\n+----+-----+\n|year|count|\n+----+-----+\n|1953|   34|\n|1957|  160|\n|1987| 1289|\n|1956|  134|\n|  -1| 5948|\n|1936|   11|\n|2012| 2121|\n| 200|    1|\n|1958|  152|\n|1943|    6|\n|1972|  496|\n|1931|    5|\n|1988| 1328|\n|1938|   11|\n|1926|    9|\n|1911|    1|\n|1918|    6|\n|1932|    2|\n|1977|  599|\n|2014| 1148|\n+----+-----+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d1"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d2"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d3"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d4"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d5"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d6"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642093014906_768002802",
+      "id": "20160114-180933_599744065",
+      "dateCreated": "2022-01-13 16:56:54.906",
+      "dateStarted": "2022-01-13 16:59:58.298",
+      "dateFinished": "2022-01-13 17:00:04.032",
+      "status": "FINISHED"
+    },
+    {
+      "title": "6 - SparkSQL on DataFrame 1",
+      "text": "df_albums.registerTempTable(\"spark_albums_table\")\n\nsqlContext.sql(\"SELECT * FROM spark_albums_table\").show",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 17:00:04.066",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[33mwarning: \u001b[0mthere was one deprecation warning; re-run with -deprecation for details\n+----------+--------------------+----+--------------+-------+--------+\n|    artist|               album|year|       country|quality|  status|\n+----------+--------------------+----+--------------+-------+--------+\n|Ultra Naté|Stranger Than Fic...|2001|           USA| normal|Official|\n|Ultra Naté|                Free|1997|   Netherlands| normal|Official|\n|Ultra Naté|          Is It Love|1992|           USA| normal|Official|\n|Ultra Naté|New Kind of Medicine|1998|United Kingdom| normal|Official|\n|Ultra Naté|                Free|1997|     Australia| normal|Official|\n|Ultra Naté|Free: The Mood II...|1997|       Denmark| normal|Official|\n|Ultra Naté|           Rejoicing|1991|           USA| normal|Official|\n|Ultra Naté|        Found a Cure|1998|United Kingdom| normal|Official|\n|Ultra Naté| Situation: Critical|1998|United Kingdom| normal|Official|\n|Ultra Naté|                Free|1998|  South Africa| normal|Official|\n|Ultra Naté|       Joy / Show Me|1993|           USA| normal|Official|\n|Ultra Naté|           Get It Up|2001|       Germany| normal|Official|\n|Ultra Naté|One Woman\u0027s Insanity|1993|           USA| normal|Official|\n|Ultra Naté|  Situation:Critical|1998|           USA| normal|Official|\n|Ultra Naté|              Desire|2000|       Germany| normal|Official|\n|Ultra Naté|New Kind of Medic...|1998|United Kingdom| normal|Official|\n|Ultra Naté|Blue Notes in the...|1991|           USA| normal|Official|\n|    Object|   The Ethane Asylum|2008|           USA| normal|Official|\n|    Object|  Part-Time Paranoia|2001|       Germany| normal|Official|\n|    Object| The Reflecting Skin|  -1|       Unknown| normal|Official|\n+----------+--------------------+----+--------------+-------+--------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d7"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642093014911_74938721",
+      "id": "20160114-002321_1001583714",
+      "dateCreated": "2022-01-13 16:56:54.911",
+      "dateStarted": "2022-01-13 17:00:04.176",
+      "dateFinished": "2022-01-13 17:00:04.875",
+      "status": "FINISHED"
+    },
+    {
+      "title": "7 - SparkSQL On DataFrame  2",
+      "text": "%sql\nSELECT country,count(*) as nb FROM spark_albums_table group by country",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 17:00:04.975",
+      "progress": 37,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "country": "string",
+                      "nb": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [
+            {
+              "name": "nb",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "yAxis": {
+              "name": "nb",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "country\tnb\nSweden\t2323\nPhilippines\t8\nSingapore\t18\nMalaysia\t4\nTurkey\t617\nGermany\t9801\nJordan\t1\nFrance\t3462\nGreece\t132\nTaiwan\t159\nSlovakia\t71\nReunion\t1\nArgentina\t525\nBelgium\t763\nEcuador\t4\nFinland\t1970\nPeru\t15\nBenin\t1\nIndia\t87\nChina\t47\nBelarus\t1\nMalta\t1\nChile\t151\nPuerto Rico\t18\nCroatia\t51\nBolivia\t1\nNigeria\t2\nVirgin Islands\t6\nAndorra\t3\nGabon\t1\nUnknown\t14740\nItaly\t1637\nLithuania\t49\nNorway\t898\nSpain\t1352\nCuba\t10\nDenmark\t346\nBarbados\t3\nRussian Federation\t751\nIreland\t109\nLiechtenstein\t2\nThailand\t5\nMonaco\t1\nHong Kong\t59\nUkraine\t49\nVenezuela\t22\nIsrael\t94\nIceland\t66\nSaint-Barthelemy\t1\nUSA\t36217\nSouth Korea\t101\nCyprus\t1\nUruguay\t22\nMexico\t266\nAruba\t1\nEstonia\t207\nIndonesia\t5\nGuatemala\t2\nArmenia\t3\nSyria\t1\nTrinidad and Tobago\t1\nSaudi Arabia\t2\nSwitzerland\t209\nEthiopia\t1\nJamaica\t234\nLatvia\t42\nUnited Arab Emirates\t6\nCanada\t1813\nFaroe Islands\t4\nCzech Republic\t190\nBrazil\t889\nLebanon\t13\nSlovenia\t46\nDominican Republic\t1\nJapan\t6042\nLuxembourg\t10\nNew Zealand\t160\nUnited States Minor Outlying Islands\t4\nBosnia and Herzegovina\t6\nPoland\t1122\nPortugal\t217\nAustralia\t1556\nRomania\t97\nBulgaria\t34\nAustria\t318\nCosta Rica\t2\nEgypt\t6\nSerbia\t17\nSouth Africa\t48\nColombia\t32\nHungary\t55\nPakistan\t1\nUnited Kingdom\t20986\nMoldova\t2\nNetherlands\t1405\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d8"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d9"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d10"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d11"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d12"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642093014911_37304390",
+      "id": "20160114-002054_842505952",
+      "dateCreated": "2022-01-13 16:56:54.911",
+      "dateStarted": "2022-01-13 17:00:05.144",
+      "dateFinished": "2022-01-13 17:00:08.071",
+      "status": "FINISHED"
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2022-01-13 17:00:08.113",
+      "progress": 0,
+      "config": {
+        "editorSetting": {},
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642093014913_1125844515",
+      "id": "20160114-093455_823181330",
+      "dateCreated": "2022-01-13 16:56:54.913",
+      "status": "FINISHED"
+    }
+  ],
+  "name": "SparkDataframe",
+  "id": "2GRZNZXVT",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {
+    "isRunning": true
+  }
+}
