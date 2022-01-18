@@ -4,7 +4,7 @@
       "title": "1 - Markdown",
       "text": "%md \n# Using Apache Spark Dataframes\n\nThis is a demonstration showing how to use [Apache Zeppelin notebook](https://zeppelin.incubator.apache.org/) to interact with [Apache Cassandra](http://cassandra.apache.org/) NoSQL database through [Apache Spark](http://spark.apache.org/) or directly through Cassandra CQL language.\n\n*Please note this is an unofficial demo and tutorial.*\n\n### Apache Spark\n\nApache Spark is a fast and general engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.\nMore details can be found here [http://spark.apache.org](http://spark.apache.org/).\nIt is  used for Cassandra data processing needs (ETL, transformations, analytics ...).\n\n\n",
       "user": "anonymous",
-      "dateUpdated": "2022-01-13 16:59:32.228",
+      "dateUpdated": "2022-01-18 15:34:52.784",
       "progress": 0,
       "config": {
         "tableHide": false,
@@ -49,15 +49,15 @@
       "jobName": "paragraph_1642093014903_676680920",
       "id": "20160113-181412_1813689583",
       "dateCreated": "2022-01-13 16:56:54.903",
-      "dateStarted": "2022-01-13 16:59:32.258",
-      "dateFinished": "2022-01-13 16:59:32.274",
+      "dateStarted": "2022-01-18 15:34:53.854",
+      "dateFinished": "2022-01-18 15:34:57.042",
       "status": "FINISHED"
     },
     {
       "title": "2 - Shell command example",
       "text": "%sh pwd\nls -l",
       "user": "anonymous",
-      "dateUpdated": "2022-01-13 16:59:32.357",
+      "dateUpdated": "2022-01-18 15:34:57.061",
       "progress": 0,
       "config": {
         "tableHide": false,
@@ -92,7 +92,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "/opt/zeppelin\ntotal 58276\ndrwxr-xr-x  2 root     root     4096 Feb 10  2021 bin\ndrwxrwxr-x  1 root     root     4096 Jan 13 16:56 conf\ndrwxr-xr-x 37 root     root     4096 Feb 10  2021 interpreter\ndrwxr-xr-x  3 root     root     4096 Feb 10  2021 k8s\ndrwxr-xr-x  3 root     root    20480 Feb 10  2021 lib\n-rw-r--r--  1 root     root    65026 Dec 20  2020 LICENSE\ndrwxr-xr-x  2 root     root     4096 Feb 10  2021 licenses\ndrwxrwxr-x  2 root     root     4096 Feb 10  2021 logs\ndrwxrwxrwx  1 root     root      512 Jan 13  2022 notebook\n-rw-r--r--  1 root     root     5808 Dec 20  2020 NOTICE\ndrwxr-xr-x  4 root     root     4096 Feb 10  2021 plugins\n-rw-r--r--  1 root     root     1438 Dec 20  2020 README.md\ndrwxrwxr-x  2 root     root     4096 Feb 10  2021 run\ndrwxr-xr-x  3 zeppelin root     4096 Jan 13 15:35 webapps\n-rw-r--r--  1 root     root 29695353 Dec 20  2020 zeppelin-web-0.9.0.war\n-rw-r--r--  1 root     root 29843280 Dec 20  2020 zeppelin-web-angular-0.9.0.war\n"
+            "data": "/opt/zeppelin\ntotal 58276\ndrwxr-xr-x  2 root     root     4096 Feb 10  2021 bin\ndrwxrwxr-x  1 root     root     4096 Jan 18 15:33 conf\ndrwxr-xr-x 37 root     root     4096 Feb 10  2021 interpreter\ndrwxr-xr-x  3 root     root     4096 Feb 10  2021 k8s\ndrwxr-xr-x  3 root     root    20480 Feb 10  2021 lib\n-rw-r--r--  1 root     root    65026 Dec 20  2020 LICENSE\ndrwxr-xr-x  2 root     root     4096 Feb 10  2021 licenses\ndrwxrwxr-x  2 root     root     4096 Feb 10  2021 logs\ndrwxrwxrwx  1 root     root      512 Jan 18 15:34 notebook\n-rw-r--r--  1 root     root     5808 Dec 20  2020 NOTICE\ndrwxr-xr-x  4 root     root     4096 Feb 10  2021 plugins\n-rw-r--r--  1 root     root     1438 Dec 20  2020 README.md\ndrwxrwxr-x  2 root     root     4096 Feb 10  2021 run\ndrwxr-xr-x  3 zeppelin root     4096 Jan 18 15:33 webapps\n-rw-r--r--  1 root     root 29695353 Dec 20  2020 zeppelin-web-0.9.0.war\n-rw-r--r--  1 root     root 29843280 Dec 20  2020 zeppelin-web-angular-0.9.0.war\n"
           }
         ]
       },
@@ -102,15 +102,15 @@
       "jobName": "paragraph_1642093014904_1282369120",
       "id": "20160113-181412_1623555306",
       "dateCreated": "2022-01-13 16:56:54.904",
-      "dateStarted": "2022-01-13 16:59:32.393",
-      "dateFinished": "2022-01-13 16:59:34.739",
+      "dateStarted": "2022-01-18 15:34:57.277",
+      "dateFinished": "2022-01-18 15:35:00.160",
       "status": "FINISHED"
     },
     {
-      "title": "4 - Download demo CSV file",
+      "title": "3 - Download demo CSV file",
       "text": "%sh\n\nwget https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv\n\n# Or download direclty the demo CSV file from https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv",
       "user": "anonymous",
-      "dateUpdated": "2022-01-13 16:59:34.806",
+      "dateUpdated": "2022-01-18 16:08:33.971",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -144,7 +144,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "--2022-01-13 16:59:34--  https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv\nResolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.111.133, ...\nConnecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 6851577 (6.5M) [text/plain]\nSaving to: ‘albums.csv’\n\n     0K .......... .......... .......... .......... ..........  0% 1.08M 6s\n    50K .......... .......... .......... .......... ..........  1% 3.52M 4s\n   100K .......... .......... .......... .......... ..........  2% 2.50M 3s\n   150K .......... .......... .......... .......... ..........  2% 3.54M 3s\n   200K .......... .......... .......... .......... ..........  3% 5.96M 3s\n   250K .......... .......... .......... .......... ..........  4% 4.80M 2s\n   300K .......... .......... .......... .......... ..........  5% 2.96M 2s\n   350K .......... .......... .......... .......... ..........  5% 1.91M 2s\n   400K .......... .......... .......... .......... ..........  6%  141M 2s\n   450K .......... .......... .......... .......... ..........  7% 11.9M 2s\n   500K .......... .......... .......... .......... ..........  8% 6.42M 2s\n   550K .......... .......... .......... .......... ..........  8% 3.75M 2s\n   600K .......... .......... .......... .......... ..........  9% 15.8M 2s\n   650K .......... .......... .......... .......... .......... 10% 59.9M 2s\n   700K .......... .......... .......... .......... .......... 11% 3.64M 2s\n   750K .......... .......... .......... .......... .......... 11% 11.2M 1s\n   800K .......... .......... .......... .......... .......... 12% 4.87M 1s\n   850K .......... .......... .......... .......... .......... 13% 8.05M 1s\n   900K .......... .......... .......... .......... .......... 14% 15.5M 1s\n   950K .......... .......... .......... .......... .......... 14% 12.2M 1s\n  1000K .......... .......... .......... .......... .......... 15% 5.93M 1s\n  1050K .......... .......... .......... .......... .......... 16% 12.0M 1s\n  1100K .......... .......... .......... .......... .......... 17% 28.6M 1s\n  1150K .......... .......... .......... .......... .......... 17% 5.72M 1s\n  1200K .......... .......... .......... .......... .......... 18% 23.0M 1s\n  1250K .......... .......... .......... .......... .......... 19% 24.9M 1s\n  1300K .......... .......... .......... .......... .......... 20% 36.6M 1s\n  1350K .......... .......... .......... .......... .......... 20% 3.36M 1s\n  1400K .......... .......... .......... .......... .......... 21% 26.5M 1s\n  1450K .......... .......... .......... .......... .......... 22% 6.16M 1s\n  1500K .......... .......... .......... .......... .......... 23% 35.5M 1s\n  1550K .......... .......... .......... .......... .......... 23% 17.8M 1s\n  1600K .......... .......... .......... .......... .......... 24% 43.8M 1s\n  1650K .......... .......... .......... .......... .......... 25% 10.6M 1s\n  1700K .......... .......... .......... .......... .......... 26% 6.41M 1s\n  1750K .......... .......... .......... .......... .......... 26% 51.1M 1s\n  1800K .......... .......... .......... .......... .......... 27% 15.8M 1s\n  1850K .......... .......... .......... .......... .......... 28% 13.9M 1s\n  1900K .......... .......... .......... .......... .......... 29% 4.65M 1s\n  1950K .......... .......... .......... .......... .......... 29% 24.8M 1s\n  2000K .......... .......... .......... .......... .......... 30% 9.14M 1s\n  2050K .......... .......... .......... .......... .......... 31% 5.99M 1s\n  2100K .......... .......... .......... .......... .......... 32% 12.7M 1s\n  2150K .......... .......... .......... .......... .......... 32% 10.2M 1s\n  2200K .......... .......... .......... .......... .......... 33%  121M 1s\n  2250K .......... .......... .......... .......... .......... 34%  164M 1s\n  2300K .......... .......... .......... .......... .......... 35% 1.43M 1s\n  2350K .......... .......... .......... .......... .......... 35% 6.17M 1s\n  2400K .......... .......... .......... .......... .......... 36% 14.3M 1s\n  2450K .......... .......... .......... .......... .......... 37% 14.4M 1s\n  2500K .......... .......... .......... .......... .......... 38% 9.91M 1s\n  2550K .......... .......... .......... .......... .......... 38% 5.52M 1s\n  2600K .......... .......... .......... .......... .......... 39% 3.62M 1s\n  2650K .......... .......... .......... .......... .......... 40% 8.77M 1s\n  2700K .......... .......... .......... .......... .......... 41% 16.2M 1s\n  2750K .......... .......... .......... .......... .......... 41% 6.87M 1s\n  2800K .......... .......... .......... .......... .......... 42% 41.8M 1s\n  2850K .......... .......... .......... .......... .......... 43% 4.27M 1s\n  2900K .......... .......... .......... .......... .......... 44% 16.7M 1s\n  2950K .......... .......... .......... .......... .......... 44%  164M 1s\n  3000K .......... .......... .......... .......... .......... 45% 12.0M 1s\n  3050K .......... .......... .......... .......... .......... 46% 13.2M 1s\n  3100K .......... .......... .......... .......... .......... 47% 30.0M 1s\n  3150K .......... .......... .......... .......... .......... 47% 8.89M 0s\n  3200K .......... .......... .......... .......... .......... 48% 18.9M 0s\n  3250K .......... .......... .......... .......... .......... 49% 6.49M 0s\n  3300K .......... .......... .......... .......... .......... 50%  149M 0s\n  3350K .......... .......... .......... .......... .......... 50% 57.4M 0s\n  3400K .......... .......... .......... .......... .......... 51% 13.6M 0s\n  3450K .......... .......... .......... .......... .......... 52% 9.66M 0s\n  3500K .......... .......... .......... .......... .......... 53% 78.5M 0s\n  3550K .......... .......... .......... .......... .......... 53% 15.6M 0s\n  3600K .......... .......... .......... .......... .......... 54% 11.8M 0s\n  3650K .......... .......... .......... .......... .......... 55% 7.35M 0s\n  3700K .......... .......... .......... .......... .......... 56% 11.6M 0s\n  3750K .......... .......... .......... .......... .......... 56% 35.4M 0s\n  3800K .......... .......... .......... .......... .......... 57% 14.7M 0s\n  3850K .......... .......... .......... .......... .......... 58% 31.8M 0s\n  3900K .......... .......... .......... .......... .......... 59% 6.63M 0s\n  3950K .......... .......... .......... .......... .......... 59%  128M 0s\n  4000K .......... .......... .......... .......... .......... 60%  184M 0s\n  4050K .......... .......... .......... .......... .......... 61% 8.16M 0s\n  4100K .......... .......... .......... .......... .......... 62% 15.7M 0s\n  4150K .......... .......... .......... .......... .......... 62% 16.8M 0s\n  4200K .......... .......... .......... .......... .......... 63% 11.9M 0s\n  4250K .......... .......... .......... .......... .......... 64% 15.2M 0s\n  4300K .......... .......... .......... .......... .......... 65% 36.5M 0s\n  4350K .......... .......... .......... .......... .......... 65% 23.0M 0s\n  4400K .......... .......... .......... .......... .......... 66% 22.8M 0s\n  4450K .......... .......... .......... .......... .......... 67% 4.42M 0s\n  4500K .......... .......... .......... .......... .......... 68% 65.4M 0s\n  4550K .......... .......... .......... .......... .......... 68%  177M 0s\n  4600K .......... .......... .......... .......... .......... 69% 15.6M 0s\n  4650K .......... .......... .......... .......... .......... 70%  107M 0s\n  4700K .......... .......... .......... .......... .......... 70% 7.84M 0s\n  4750K .......... .......... .......... .......... .......... 71% 7.46M 0s\n  4800K .......... .......... .......... .......... .......... 72%  124M 0s\n  4850K .......... .......... .......... .......... .......... 73% 20.7M 0s\n  4900K .......... .......... .......... .......... .......... 73%  173M 0s\n  4950K .......... .......... .......... .......... .......... 74% 5.97M 0s\n  5000K .......... .......... .......... .......... .......... 75% 5.84M 0s\n  5050K .......... .......... .......... .......... .......... 76%  130M 0s\n  5100K .......... .......... .......... .......... .......... 76%  170M 0s\n  5150K .......... .......... .......... .......... .......... 77%  176M 0s\n  5200K .......... .......... .......... .......... .......... 78% 53.3M 0s\n  5250K .......... .......... .......... .......... .......... 79% 4.67M 0s\n  5300K .......... .......... .......... .......... .......... 79%  144M 0s\n  5350K .......... .......... .......... .......... .......... 80%  184M 0s\n  5400K .......... .......... .......... .......... .......... 81%  191M 0s\n  5450K .......... .......... .......... .......... .......... 82% 9.03M 0s\n  5500K .......... .......... .......... .......... .......... 82% 27.1M 0s\n  5550K .......... .......... .......... .......... .......... 83% 8.54M 0s\n  5600K .......... .......... .......... .......... .......... 84% 5.16M 0s\n  5650K .......... .......... .......... .......... .......... 85% 6.45M 0s\n  5700K .......... .......... .......... .......... .......... 85% 7.98M 0s\n  5750K .......... .......... .......... .......... .......... 86%  194M 0s\n  5800K .......... .......... .......... .......... .......... 87% 7.34M 0s\n  5850K .......... .......... .......... .......... .......... 88%  147M 0s\n  5900K .......... .......... .......... .......... .......... 88% 4.78M 0s\n  5950K .......... .......... .......... .......... .......... 89% 46.7M 0s\n  6000K .......... .......... .......... .......... .......... 90% 24.7M 0s\n  6050K .......... .......... .......... .......... .......... 91% 24.7M 0s\n  6100K .......... .......... .......... .......... .......... 91% 7.83M 0s\n  6150K .......... .......... .......... .......... .......... 92% 13.4M 0s\n  6200K .......... .......... .......... .......... .......... 93% 12.6M 0s\n  6250K .......... .......... .......... .......... .......... 94% 8.87M 0s\n  6300K .......... .......... .......... .......... .......... 94% 77.0M 0s\n  6350K .......... .......... .......... .......... .......... 95%  124M 0s\n  6400K .......... .......... .......... .......... .......... 96% 20.9M 0s\n  6450K .......... .......... .......... .......... .......... 97% 11.5M 0s\n  6500K .......... .......... .......... .......... .......... 97% 14.3M 0s\n  6550K .......... .......... .......... .......... .......... 98% 10.8M 0s\n  6600K .......... .......... .......... .......... .......... 99% 17.1M 0s\n  6650K .......... .......... .......... ..........           100% 89.1M\u003d0.7s\n\n2022-01-13 16:59:36 (9.42 MB/s) - ‘albums.csv’ saved [6851577/6851577]\n\n"
+            "data": "--2022-01-18 15:35:00--  https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv\nResolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.111.133, ...\nConnecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 6851577 (6.5M) [text/plain]\nSaving to: ‘albums.csv’\n\n     0K .......... .......... .......... .......... ..........  0% 1.25M 5s\n    50K .......... .......... .......... .......... ..........  1% 1.10M 5s\n   100K .......... .......... .......... .......... ..........  2%  426K 9s\n   150K .......... .......... .......... .......... ..........  2% 2.41M 7s\n   200K .......... .......... .......... .......... ..........  3% 1.03M 7s\n   250K .......... .......... .......... .......... ..........  4% 2.36M 6s\n   300K .......... .......... .......... .......... ..........  5% 9.06M 5s\n   350K .......... .......... .......... .......... ..........  5% 2.22M 5s\n   400K .......... .......... .......... .......... ..........  6% 20.9M 4s\n   450K .......... .......... .......... .......... ..........  7% 2.95M 4s\n   500K .......... .......... .......... .......... ..........  8% 1.93M 4s\n   550K .......... .......... .......... .......... ..........  8% 2.44M 4s\n   600K .......... .......... .......... .......... ..........  9% 1.57M 4s\n   650K .......... .......... .......... .......... .......... 10% 4.82M 4s\n   700K .......... .......... .......... .......... .......... 11% 2.33M 4s\n   750K .......... .......... .......... .......... .......... 11% 4.94M 3s\n   800K .......... .......... .......... .......... .......... 12% 2.90M 3s\n   850K .......... .......... .......... .......... .......... 13% 2.28M 3s\n   900K .......... .......... .......... .......... .......... 14% 3.27M 3s\n   950K .......... .......... .......... .......... .......... 14% 2.39M 3s\n  1000K .......... .......... .......... .......... .......... 15% 3.20M 3s\n  1050K .......... .......... .......... .......... .......... 16% 1.40M 3s\n  1100K .......... .......... .......... .......... .......... 17% 7.72M 3s\n  1150K .......... .......... .......... .......... .......... 17% 1.39M 3s\n  1200K .......... .......... .......... .......... .......... 18%  172M 3s\n  1250K .......... .......... .......... .......... .......... 19% 3.35M 3s\n  1300K .......... .......... .......... .......... .......... 20% 1011K 3s\n  1350K .......... .......... .......... .......... .......... 20% 4.40M 3s\n  1400K .......... .......... .......... .......... .......... 21% 8.29M 3s\n  1450K .......... .......... .......... .......... .......... 22% 3.39M 2s\n  1500K .......... .......... .......... .......... .......... 23% 2.81M 2s\n  1550K .......... .......... .......... .......... .......... 23% 4.18M 2s\n  1600K .......... .......... .......... .......... .......... 24% 2.08M 2s\n  1650K .......... .......... .......... .......... .......... 25% 4.75M 2s\n  1700K .......... .......... .......... .......... .......... 26% 18.1M 2s\n  1750K .......... .......... .......... .......... .......... 26% 2.56M 2s\n  1800K .......... .......... .......... .......... .......... 27% 2.35M 2s\n  1850K .......... .......... .......... .......... .......... 28% 10.8M 2s\n  1900K .......... .......... .......... .......... .......... 29% 3.73M 2s\n  1950K .......... .......... .......... .......... .......... 29% 6.54M 2s\n  2000K .......... .......... .......... .......... .......... 30% 5.92M 2s\n  2050K .......... .......... .......... .......... .......... 31% 3.19M 2s\n  2100K .......... .......... .......... .......... .......... 32% 3.93M 2s\n  2150K .......... .......... .......... .......... .......... 32% 4.32M 2s\n  2200K .......... .......... .......... .......... .......... 33% 4.29M 2s\n  2250K .......... .......... .......... .......... .......... 34% 3.12M 2s\n  2300K .......... .......... .......... .......... .......... 35% 15.8K 8s\n  2350K .......... .......... .......... .......... .......... 35%  144M 7s\n  2400K .......... .......... .......... .......... .......... 36%  206M 7s\n  2450K .......... .......... .......... .......... .......... 37%  196M 7s\n  2500K .......... .......... .......... .......... .......... 38%  203M 7s\n  2550K .......... .......... .......... .......... .......... 38% 88.5M 6s\n  2600K .......... .......... .......... .......... .......... 39%  226M 6s\n  2650K .......... .......... .......... .......... .......... 40%  175M 6s\n  2700K .......... .......... .......... .......... .......... 41%  217M 6s\n  2750K .......... .......... .......... .......... .......... 41%  195M 6s\n  2800K .......... .......... .......... .......... .......... 42%  242M 6s\n  2850K .......... .......... .......... .......... .......... 43%  221M 5s\n  2900K .......... .......... .......... .......... .......... 44%  245M 5s\n  2950K .......... .......... .......... .......... .......... 44%  187M 5s\n  3000K .......... .......... .......... .......... .......... 45%  237M 5s\n  3050K .......... .......... .......... .......... .......... 46%  245M 5s\n  3100K .......... .......... .......... .......... .......... 47%  191M 5s\n  3150K .......... .......... .......... .......... .......... 47%  189M 4s\n  3200K .......... .......... .......... .......... .......... 48%  164M 4s\n  3250K .......... .......... .......... .......... .......... 49%  243M 4s\n  3300K .......... .......... .......... .......... .......... 50%  210M 4s\n  3350K .......... .......... .......... .......... .......... 50%  202M 4s\n  3400K .......... .......... .......... .......... .......... 51%  164M 4s\n  3450K .......... .......... .......... .......... .......... 52%  243M 4s\n  3500K .......... .......... .......... .......... .......... 53%  219M 4s\n  3550K .......... .......... .......... .......... .......... 53%  219M 4s\n  3600K .......... .......... .......... .......... .......... 54%  212M 3s\n  3650K .......... .......... .......... .......... .......... 55%  233M 3s\n  3700K .......... .......... .......... .......... .......... 56%  225M 3s\n  3750K .......... .......... .......... .......... .......... 56%  200M 3s\n  3800K .......... .......... .......... .......... .......... 57% 2.04M 3s\n  3850K .......... .......... .......... .......... .......... 58% 97.4M 3s\n  3900K .......... .......... .......... .......... .......... 59% 5.01M 3s\n  3950K .......... .......... .......... .......... .......... 59% 8.66M 3s\n  4000K .......... .......... .......... .......... .......... 60% 19.6M 3s\n  4050K .......... .......... .......... .......... .......... 61% 10.1M 3s\n  4100K .......... .......... .......... .......... .......... 62% 26.5M 3s\n  4150K .......... .......... .......... .......... .......... 62% 24.6M 2s\n  4200K .......... .......... .......... .......... .......... 63%  178M 2s\n  4250K .......... .......... .......... .......... .......... 64%  138M 2s\n  4300K .......... .......... .......... .......... .......... 65% 6.97M 2s\n  4350K .......... .......... .......... .......... .......... 65% 27.8K 3s\n  4400K .......... .......... .......... .......... .......... 66%  194M 3s\n  4450K .......... .......... .......... .......... .......... 67%  228M 3s\n  4500K .......... .......... .......... .......... .......... 68%  191M 3s\n  4550K .......... .......... .......... .......... .......... 68%  122M 3s\n  4600K .......... .......... .......... .......... .......... 69%  171M 3s\n  4650K .......... .......... .......... .......... .......... 70% 93.0M 3s\n  4700K .......... .......... .......... .......... .......... 70%  174M 2s\n  4750K .......... .......... .......... .......... .......... 71%  169M 2s\n  4800K .......... .......... .......... .......... .......... 72%  178M 2s\n  4850K .......... .......... .......... .......... .......... 73%  172M 2s\n  4900K .......... .......... .......... .......... .......... 73%  196M 2s\n  4950K .......... .......... .......... .......... .......... 74%  157M 2s\n  5000K .......... .......... .......... .......... .......... 75%  201M 2s\n  5050K .......... .......... .......... .......... .......... 76%  181M 2s\n  5100K .......... .......... .......... .......... .......... 76%  192M 2s\n  5150K .......... .......... .......... .......... .......... 77%  168M 2s\n  5200K .......... .......... .......... .......... .......... 78%  190M 2s\n  5250K .......... .......... .......... .......... .......... 79%  183M 2s\n  5300K .......... .......... .......... .......... .......... 79%  175M 1s\n  5350K .......... .......... .......... .......... .......... 80%  169M 1s\n  5400K .......... .......... .......... .......... .......... 81%  221M 1s\n  5450K .......... .......... .......... .......... .......... 82%  152M 1s\n  5500K .......... .......... .......... .......... .......... 82%  177M 1s\n  5550K .......... .......... .......... .......... .......... 83%  210M 1s\n  5600K .......... .......... .......... .......... .......... 84%  175M 1s\n  5650K .......... .......... .......... .......... .......... 85%  239M 1s\n  5700K .......... .......... .......... .......... .......... 85%  249M 1s\n  5750K .......... .......... .......... .......... .......... 86%  184M 1s\n  5800K .......... .......... .......... .......... .......... 87%  242M 1s\n  5850K .......... .......... .......... .......... .......... 88%  171M 1s\n  5900K .......... .......... .......... .......... .......... 88%  231M 1s\n  5950K .......... .......... .......... .......... .......... 89%  178M 1s\n  6000K .......... .......... .......... .......... .......... 90%  193M 1s\n  6050K .......... .......... .......... .......... .......... 91%  171M 1s\n  6100K .......... .......... .......... .......... .......... 91%  236M 1s\n  6150K .......... .......... .......... .......... .......... 92% 6.19M 0s\n  6200K .......... .......... .......... .......... .......... 93% 52.8M 0s\n  6250K .......... .......... .......... .......... .......... 94%  170M 0s\n  6300K .......... .......... .......... .......... .......... 94%  192M 0s\n  6350K .......... .......... .......... .......... .......... 95%  122M 0s\n  6400K .......... .......... .......... .......... .......... 96%  195M 0s\n  6450K .......... .......... .......... .......... .......... 97%  179M 0s\n  6500K .......... .......... .......... .......... .......... 97%  178M 0s\n  6550K .......... .......... .......... .......... .......... 98%  159M 0s\n  6600K .......... .......... .......... .......... .......... 99%  160M 0s\n  6650K .......... .......... .......... ..........           100%  182M\u003d6.0s\n\n2022-01-18 15:35:08 (1.10 MB/s) - ‘albums.csv’ saved [6851577/6851577]\n\n"
           }
         ]
       },
@@ -154,16 +154,170 @@
       "jobName": "paragraph_1642093014904_106927213",
       "id": "20160123-165554_1618215392",
       "dateCreated": "2022-01-13 16:56:54.904",
-      "dateStarted": "2022-01-13 16:59:34.843",
-      "dateFinished": "2022-01-13 16:59:36.411",
+      "dateStarted": "2022-01-18 15:35:00.385",
+      "dateFinished": "2022-01-18 15:35:08.267",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n## Create a DataFrame from an RDD\nNote that we can consider a DataFrame as an RDD with a defined schema. In other words, a DataFrame is like a SQL table that we can query with SQL statements.\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 16:07:58.081",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eCreate a DataFrame from an RDD\u003c/h2\u003e\n\u003cp\u003eNote that we can consider a DataFrame as an RDD with a defined schema. In other words, a DataFrame is like a SQL table that we can query with SQL statements.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642520291561_1946972049",
+      "id": "paragraph_1642520291561_1946972049",
+      "dateCreated": "2022-01-18 15:38:11.561",
+      "dateStarted": "2022-01-18 16:07:58.081",
+      "dateFinished": "2022-01-18 16:07:58.096",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nval albumsRdd \u003d sqlContext.read.csv(\"albums.csv\").rdd\nalbumsRdd.take(10).foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 15:51:20.436",
+      "progress": 100,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[artist,album,year,country,quality,status]\n[Ultra Naté,Stranger Than Fiction,2001,USA,normal,Official]\n[Ultra Naté,Free,1997,Netherlands,normal,Official]\n[Ultra Naté,Is It Love,1992,USA,normal,Official]\n[Ultra Naté,New Kind of Medicine,1998,United Kingdom,normal,Official]\n[Ultra Naté,Free,1997,Australia,normal,Official]\n[Ultra Naté,Free: The Mood II Swing / Full Intention Mixes,1997,Denmark,normal,Official]\n[Ultra Naté,Rejoicing,1991,USA,normal,Official]\n[Ultra Naté,Found a Cure,1998,United Kingdom,normal,Official]\n[Ultra Naté,Situation: Critical,1998,United Kingdom,normal,Official]\n\u001b[1m\u001b[34malbumsRdd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[org.apache.spark.sql.Row]\u001b[0m \u003d MapPartitionsRDD[65] at rdd at \u003cconsole\u003e:28\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d14"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d15"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642520506678_1396866548",
+      "id": "paragraph_1642520506678_1396866548",
+      "dateCreated": "2022-01-18 15:41:46.678",
+      "dateStarted": "2022-01-18 15:51:20.483",
+      "dateFinished": "2022-01-18 15:51:22.172",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nimport spark.implicits._\nimport org.apache.spark.sql.types.{StructType, StructField, StringType, IntegerType};\n\nval columns \u003d Seq(\"artist\", \"album\", \"year\", \"country\", \"quality\", \"status\")\nval schema \u003d StructType(columns.map(fieldName \u003d\u003e StructField(fieldName, StringType, nullable \u003d true)))\n// val albumsRddRow \u003d albumsRdd.map(cols \u003d\u003e Row(cols._1, cols._2, cols._3, cols._4, cols._5, cols._6))\nval df \u003d spark.createDataFrame(albumsRdd, schema)\ndf.printSchema()\ndf.show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 16:06:43.812",
+      "progress": 100,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- artist: string (nullable \u003d true)\n |-- album: string (nullable \u003d true)\n |-- year: string (nullable \u003d true)\n |-- country: string (nullable \u003d true)\n |-- quality: string (nullable \u003d true)\n |-- status: string (nullable \u003d true)\n\n+----------+--------------------+----+--------------+-------+--------+\n|    artist|               album|year|       country|quality|  status|\n+----------+--------------------+----+--------------+-------+--------+\n|    artist|               album|year|       country|quality|  status|\n|Ultra Naté|Stranger Than Fic...|2001|           USA| normal|Official|\n|Ultra Naté|                Free|1997|   Netherlands| normal|Official|\n|Ultra Naté|          Is It Love|1992|           USA| normal|Official|\n|Ultra Naté|New Kind of Medicine|1998|United Kingdom| normal|Official|\n|Ultra Naté|                Free|1997|     Australia| normal|Official|\n|Ultra Naté|Free: The Mood II...|1997|       Denmark| normal|Official|\n|Ultra Naté|           Rejoicing|1991|           USA| normal|Official|\n|Ultra Naté|        Found a Cure|1998|United Kingdom| normal|Official|\n|Ultra Naté| Situation: Critical|1998|United Kingdom| normal|Official|\n|Ultra Naté|                Free|1998|  South Africa| normal|Official|\n|Ultra Naté|       Joy / Show Me|1993|           USA| normal|Official|\n|Ultra Naté|           Get It Up|2001|       Germany| normal|Official|\n|Ultra Naté|One Woman\u0027s Insanity|1993|           USA| normal|Official|\n|Ultra Naté|  Situation:Critical|1998|           USA| normal|Official|\n|Ultra Naté|              Desire|2000|       Germany| normal|Official|\n|Ultra Naté|New Kind of Medic...|1998|United Kingdom| normal|Official|\n|Ultra Naté|Blue Notes in the...|1991|           USA| normal|Official|\n|    Object|   The Ethane Asylum|2008|           USA| normal|Official|\n|    Object|  Part-Time Paranoia|2001|       Germany| normal|Official|\n+----------+--------------------+----+--------------+-------+--------+\nonly showing top 20 rows\n\nimport spark.implicits._\nimport org.apache.spark.sql.types.{StructType, StructField, StringType, IntegerType}\n\u001b[1m\u001b[34mcolumns\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m \u003d List(artist, album, year, country, quality, status)\n\u001b[1m\u001b[34mschema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(artist,StringType,true), StructField(album,StringType,true), StructField(year,StringType,true), StructField(country,StringType,true), StructField(quality,StringType,true), StructField(status,StringType,true))\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [artist: string, album: string ... 4 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d16"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642521358074_1478724313",
+      "id": "paragraph_1642521358074_1478724313",
+      "dateCreated": "2022-01-18 15:55:58.074",
+      "dateStarted": "2022-01-18 16:06:43.847",
+      "dateFinished": "2022-01-18 16:06:48.469",
       "status": "FINISHED"
     },
     {
       "title": "4 - Spark :  load cSV File in dataFrame",
       "text": "%spark\n\n//Display Spark version used\n\nval df_albums \u003d sqlContext.read\n.format(\"csv\")\n.option(\"header\", \"true\")\n.load(\"albums.csv\")\n.cache\n\n//If you want to store albums.csv in a specific folder run\n//val df_albums \u003d sqlContext.read\n//.format(\"com.databricks.spark.csv\")\n//.option(\"header\", \"true\")\n//.load(\"/your_path/albums.csv\")\n//.cache",
       "user": "anonymous",
-      "dateUpdated": "2022-01-13 16:59:36.453",
-      "progress": 0,
+      "dateUpdated": "2022-01-18 15:35:08.316",
+      "progress": 100,
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -220,16 +374,59 @@
       "jobName": "paragraph_1642093014906_725249644",
       "id": "20160113-181412_829518708",
       "dateCreated": "2022-01-13 16:56:54.906",
-      "dateStarted": "2022-01-13 16:59:36.496",
-      "dateFinished": "2022-01-13 16:59:58.186",
+      "dateStarted": "2022-01-18 15:35:08.484",
+      "dateFinished": "2022-01-18 15:35:47.242",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n## Spark DataFrame\nSpark DataFrame provides methods to query it in a SQL like manner (e. g. ``df.select(\"artist\", \"album\")``).\n\nNevertheless, you can register a DF as a temporary table to query it via traditional SQL statements.",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 16:29:21.656",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eSpark DataFrame\u003c/h2\u003e\n\u003cp\u003eSpark DataFrame provides methods to query it in a SQL like manner (e. g. \u003ccode\u003edf.select(\u0026quot;artist\u0026quot;, \u0026quot;album\u0026quot;)\u003c/code\u003e).\u003c/p\u003e\n\u003cp\u003eNevertheless, you can register a DF as a temporary table to query it via traditional SQL statements.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642523226766_1284361836",
+      "id": "paragraph_1642523226766_1284361836",
+      "dateCreated": "2022-01-18 16:27:06.766",
+      "dateStarted": "2022-01-18 16:29:21.657",
+      "dateFinished": "2022-01-18 16:29:21.666",
       "status": "FINISHED"
     },
     {
       "title": "5 - Spark : Print Schema, Show, Filter, GroupBy dataFrame",
       "text": "df_albums.printSchema()\ndf_albums.show()\ndf_albums.filter(\"year \u003e 2000\").show()\ndf_albums.groupBy(\"year\").count().show()",
       "user": "anonymous",
-      "dateUpdated": "2022-01-13 16:59:58.266",
-      "progress": 28,
+      "dateUpdated": "2022-01-18 15:35:47.298",
+      "progress": 68,
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -301,15 +498,15 @@
       "jobName": "paragraph_1642093014906_768002802",
       "id": "20160114-180933_599744065",
       "dateCreated": "2022-01-13 16:56:54.906",
-      "dateStarted": "2022-01-13 16:59:58.298",
-      "dateFinished": "2022-01-13 17:00:04.032",
+      "dateStarted": "2022-01-18 15:35:47.357",
+      "dateFinished": "2022-01-18 15:36:05.741",
       "status": "FINISHED"
     },
     {
       "title": "6 - SparkSQL on DataFrame 1",
       "text": "df_albums.registerTempTable(\"spark_albums_table\")\n\nsqlContext.sql(\"SELECT * FROM spark_albums_table\").show",
       "user": "anonymous",
-      "dateUpdated": "2022-01-13 17:00:04.066",
+      "dateUpdated": "2022-01-18 16:27:37.386",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -367,16 +564,16 @@
       "jobName": "paragraph_1642093014911_74938721",
       "id": "20160114-002321_1001583714",
       "dateCreated": "2022-01-13 16:56:54.911",
-      "dateStarted": "2022-01-13 17:00:04.176",
-      "dateFinished": "2022-01-13 17:00:04.875",
+      "dateStarted": "2022-01-18 15:36:05.997",
+      "dateFinished": "2022-01-18 15:36:07.477",
       "status": "FINISHED"
     },
     {
       "title": "7 - SparkSQL On DataFrame  2",
       "text": "%sql\nSELECT country,count(*) as nb FROM spark_albums_table group by country",
       "user": "anonymous",
-      "dateUpdated": "2022-01-13 17:00:04.975",
-      "progress": 37,
+      "dateUpdated": "2022-01-18 15:36:07.545",
+      "progress": 36,
       "config": {
         "editorSetting": {
           "language": "sql",
@@ -486,13 +683,13 @@
       "jobName": "paragraph_1642093014911_37304390",
       "id": "20160114-002054_842505952",
       "dateCreated": "2022-01-13 16:56:54.911",
-      "dateStarted": "2022-01-13 17:00:05.144",
-      "dateFinished": "2022-01-13 17:00:08.071",
+      "dateStarted": "2022-01-18 15:36:07.641",
+      "dateFinished": "2022-01-18 15:36:14.248",
       "status": "FINISHED"
     },
     {
       "user": "anonymous",
-      "dateUpdated": "2022-01-13 17:00:08.113",
+      "dateUpdated": "2022-01-18 15:36:14.336",
       "progress": 0,
       "config": {
         "editorSetting": {},
@@ -536,6 +733,6 @@
     "isZeppelinNotebookCronEnable": false
   },
   "info": {
-    "isRunning": true
+    "isRunning": false
   }
 }

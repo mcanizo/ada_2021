@@ -1,0 +1,612 @@
+{
+  "paragraphs": [
+    {
+      "title": "1 - Markdown",
+      "text": "%md \n# Using Apache Spark Dataframes\n\nThis is a demonstration showing how to use [Apache Zeppelin notebook](https://zeppelin.incubator.apache.org/) to interact with [Apache Cassandra](http://cassandra.apache.org/) NoSQL database through [Apache Spark](http://spark.apache.org/) or directly through Cassandra CQL language.\n\n*Please note this is an unofficial demo and tutorial.*\n\n### Apache Spark\n\nApache Spark is a fast and general engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.\nMore details can be found here [http://spark.apache.org](http://spark.apache.org/).\nIt is  used for Cassandra data processing needs (ETL, transformations, analytics ...).\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 17:15:08.229",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eUsing Apache Spark Dataframes\u003c/h1\u003e\n\u003cp\u003eThis is a demonstration showing how to use \u003ca href\u003d\"https://zeppelin.incubator.apache.org/\"\u003eApache Zeppelin notebook\u003c/a\u003e to interact with \u003ca href\u003d\"http://cassandra.apache.org/\"\u003eApache Cassandra\u003c/a\u003e NoSQL database through \u003ca href\u003d\"http://spark.apache.org/\"\u003eApache Spark\u003c/a\u003e or directly through Cassandra CQL language.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003ePlease note this is an unofficial demo and tutorial.\u003c/em\u003e\u003c/p\u003e\n\u003ch3\u003eApache Spark\u003c/h3\u003e\n\u003cp\u003eApache Spark is a fast and general engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.\u003cbr /\u003e\nMore details can be found here \u003ca href\u003d\"http://spark.apache.org/\"\u003ehttp://spark.apache.org\u003c/a\u003e.\u003cbr /\u003e\nIt is  used for Cassandra data processing needs (ETL, transformations, analytics \u0026hellip;).\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642526108229_756869534",
+      "id": "20160113-181412_1813689583",
+      "dateCreated": "2022-01-18 17:15:08.229",
+      "status": "READY"
+    },
+    {
+      "title": "2 - Shell command example",
+      "text": "%sh pwd\nls -l",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 17:15:08.230",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "/opt/zeppelin\ntotal 64972\n-rw-r--r--  1 zeppelin root  6851577 Jan 18 15:35 albums.csv\ndrwxr-xr-x  2 root     root     4096 Feb 10  2021 bin\ndrwxrwxr-x  1 root     root     4096 Jan 18 16:32 conf\ndrwxr-xr-x 37 root     root     4096 Feb 10  2021 interpreter\ndrwxr-xr-x  3 root     root     4096 Feb 10  2021 k8s\ndrwxr-xr-x  3 root     root    20480 Feb 10  2021 lib\n-rw-r--r--  1 root     root    65026 Dec 20  2020 LICENSE\ndrwxr-xr-x  2 root     root     4096 Feb 10  2021 licenses\ndrwxrwxr-x  2 root     root     4096 Feb 10  2021 logs\ndrwxrwxrwx  1 root     root      512 Jan 18  2022 notebook\n-rw-r--r--  1 root     root     5808 Dec 20  2020 NOTICE\ndrwxr-xr-x  4 root     root     4096 Feb 10  2021 plugins\n-rw-r--r--  1 root     root     1438 Dec 20  2020 README.md\ndrwxrwxr-x  2 root     root     4096 Feb 10  2021 run\ndrwxr-xr-x  2 zeppelin root     4096 Jan 18 15:36 spark-warehouse\ndrwxr-xr-x  3 zeppelin root     4096 Jan 18 15:33 webapps\n-rw-r--r--  1 root     root 29695353 Dec 20  2020 zeppelin-web-0.9.0.war\n-rw-r--r--  1 root     root 29843280 Dec 20  2020 zeppelin-web-angular-0.9.0.war\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642526108229_8902693",
+      "id": "20160113-181412_1623555306",
+      "dateCreated": "2022-01-18 17:15:08.229",
+      "status": "READY"
+    },
+    {
+      "text": "%md\n## 3 - Spark :  load CSV File in dataFrame\nLoad the iris.csv file stored in _/zeppelin/data_\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 17:15:08.230",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e3 - Spark :  load CSV File in dataFrame\u003c/h2\u003e\n\u003cp\u003eLoad the iris.csv file stored in \u003cem\u003e/zeppelin/data\u003c/em\u003e\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642526108230_2143134056",
+      "id": "paragraph_1642523744074_651491066",
+      "dateCreated": "2022-01-18 17:15:08.230",
+      "status": "READY"
+    },
+    {
+      "title": "3 - Spark :  load cSV File in dataFrame",
+      "text": "%spark\nimport org.apache.spark.sql.types.{StructType, StructField, StringType, DoubleType};\n\n//Display Spark version used\n\nval schema \u003d new StructType()\n      .add(\"sepal_length\",DoubleType,true)\n      .add(\"sepal_width\",DoubleType,true)\n      .add(\"petal_length\",DoubleType,true)\n      .add(\"petal_width\",DoubleType,true)\n      .add(\"variety\",StringType,true)\n\nval df_albums \u003d sqlContext.read\n.format(\"csv\")\n.option(\"header\", \"true\")\n.schema(schema)\n.load(\"/zeppelin/data/iris.csv\")\n.cache\n\n//If you want to store albums.csv in a specific folder run\n//val df_albums \u003d sqlContext.read\n//.format(\"com.databricks.spark.csv\")\n//.option(\"header\", \"true\")\n//.load(\"/your_path/albums.csv\")\n//.cache",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 17:15:08.230",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": false,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.types.{StructType, StructField, StringType, DoubleType}\n\u001b[1m\u001b[34mschema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(sepal_length,DoubleType,true), StructField(sepal_width,DoubleType,true), StructField(petal_length,DoubleType,true), StructField(petal_width,DoubleType,true), StructField(variety,StringType,true))\n\u001b[1m\u001b[34mdf_albums\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m \u003d [sepal_length: double, sepal_width: double ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642526108230_722528488",
+      "id": "20160113-181412_829518708",
+      "dateCreated": "2022-01-18 17:15:08.230",
+      "status": "READY"
+    },
+    {
+      "text": "%md\n## 4 - Spark: use the methods provided by the Dataframe to analyze data\nNext, you have to:\n- print the schema of the data\n- show some of the data\n- filter all rows with ``variety\u003dVersicolor``\n- count how many rows are for each type of ``variety``",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 17:15:08.230",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e4 - Spark: use the methods provided by the Dataframe to analyze data\u003c/h2\u003e\n\u003cp\u003eNext, you have to:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eprint the schema of the data\u003c/li\u003e\n\u003cli\u003eshow some of the data\u003c/li\u003e\n\u003cli\u003efilter all rows with \u003ccode\u003evariety\u003dVersicolor\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003ecount how many rows are for each type of \u003ccode\u003evariety\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642526108230_1533551443",
+      "id": "paragraph_1642523226766_1284361836",
+      "dateCreated": "2022-01-18 17:15:08.230",
+      "status": "READY"
+    },
+    {
+      "title": "5 - Spark : Print Schema, Show, Filter, GroupBy dataFrame",
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 17:15:22.707",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": false,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- sepal_length: double (nullable \u003d true)\n |-- sepal_width: double (nullable \u003d true)\n |-- petal_length: double (nullable \u003d true)\n |-- petal_width: double (nullable \u003d true)\n |-- variety: string (nullable \u003d true)\n\n+------------+-----------+------------+-----------+-------+\n|sepal_length|sepal_width|petal_length|petal_width|variety|\n+------------+-----------+------------+-----------+-------+\n|         5.1|        3.5|         1.4|        0.2| Setosa|\n|         4.9|        3.0|         1.4|        0.2| Setosa|\n|         4.7|        3.2|         1.3|        0.2| Setosa|\n|         4.6|        3.1|         1.5|        0.2| Setosa|\n|         5.0|        3.6|         1.4|        0.2| Setosa|\n|         5.4|        3.9|         1.7|        0.4| Setosa|\n|         4.6|        3.4|         1.4|        0.3| Setosa|\n|         5.0|        3.4|         1.5|        0.2| Setosa|\n|         4.4|        2.9|         1.4|        0.2| Setosa|\n|         4.9|        3.1|         1.5|        0.1| Setosa|\n|         5.4|        3.7|         1.5|        0.2| Setosa|\n|         4.8|        3.4|         1.6|        0.2| Setosa|\n|         4.8|        3.0|         1.4|        0.1| Setosa|\n|         4.3|        3.0|         1.1|        0.1| Setosa|\n|         5.8|        4.0|         1.2|        0.2| Setosa|\n|         5.7|        4.4|         1.5|        0.4| Setosa|\n|         5.4|        3.9|         1.3|        0.4| Setosa|\n|         5.1|        3.5|         1.4|        0.3| Setosa|\n|         5.7|        3.8|         1.7|        0.3| Setosa|\n|         5.1|        3.8|         1.5|        0.3| Setosa|\n+------------+-----------+------------+-----------+-------+\nonly showing top 20 rows\n\n+------------+-----------+------------+-----------+----------+\n|sepal_length|sepal_width|petal_length|petal_width|   variety|\n+------------+-----------+------------+-----------+----------+\n|         7.0|        3.2|         4.7|        1.4|Versicolor|\n|         6.4|        3.2|         4.5|        1.5|Versicolor|\n|         6.9|        3.1|         4.9|        1.5|Versicolor|\n|         5.5|        2.3|         4.0|        1.3|Versicolor|\n|         6.5|        2.8|         4.6|        1.5|Versicolor|\n|         5.7|        2.8|         4.5|        1.3|Versicolor|\n|         6.3|        3.3|         4.7|        1.6|Versicolor|\n|         4.9|        2.4|         3.3|        1.0|Versicolor|\n|         6.6|        2.9|         4.6|        1.3|Versicolor|\n|         5.2|        2.7|         3.9|        1.4|Versicolor|\n|         5.0|        2.0|         3.5|        1.0|Versicolor|\n|         5.9|        3.0|         4.2|        1.5|Versicolor|\n|         6.0|        2.2|         4.0|        1.0|Versicolor|\n|         6.1|        2.9|         4.7|        1.4|Versicolor|\n|         5.6|        2.9|         3.6|        1.3|Versicolor|\n|         6.7|        3.1|         4.4|        1.4|Versicolor|\n|         5.6|        3.0|         4.5|        1.5|Versicolor|\n|         5.8|        2.7|         4.1|        1.0|Versicolor|\n|         6.2|        2.2|         4.5|        1.5|Versicolor|\n|         5.6|        2.5|         3.9|        1.1|Versicolor|\n+------------+-----------+------------+-----------+----------+\nonly showing top 20 rows\n\n+----------+-----+\n|   variety|count|\n+----------+-----+\n| Virginica|   50|\n|    Setosa|   50|\n|Versicolor|   50|\n+----------+-----+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642526108230_1245292961",
+      "id": "20160114-180933_599744065",
+      "dateCreated": "2022-01-18 17:15:08.230",
+      "status": "READY"
+    },
+    {
+      "text": "%md\n## 5 - SparkSQL: register table and use SQL statements to select all the data\nUser the ``registerTempTable`` and ``sqlContext.sql()`` to do the job ",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 17:15:08.230",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e5 - SparkSQL: register table and use SQL statements to select all the data\u003c/h2\u003e\n\u003cp\u003eUser the \u003ccode\u003eregisterTempTable\u003c/code\u003e and \u003ccode\u003esqlContext.sql()\u003c/code\u003e to do the job\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642526108230_1982684786",
+      "id": "paragraph_1642524568360_1833342707",
+      "dateCreated": "2022-01-18 17:15:08.230",
+      "status": "READY"
+    },
+    {
+      "title": "",
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 17:15:27.043",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": false,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[33mwarning: \u001b[0mthere was one deprecation warning; re-run with -deprecation for details\n+------------+-----------+------------+-----------+-------+\n|sepal_length|sepal_width|petal_length|petal_width|variety|\n+------------+-----------+------------+-----------+-------+\n|         5.1|        3.5|         1.4|        0.2| Setosa|\n|         4.9|        3.0|         1.4|        0.2| Setosa|\n|         4.7|        3.2|         1.3|        0.2| Setosa|\n|         4.6|        3.1|         1.5|        0.2| Setosa|\n|         5.0|        3.6|         1.4|        0.2| Setosa|\n|         5.4|        3.9|         1.7|        0.4| Setosa|\n|         4.6|        3.4|         1.4|        0.3| Setosa|\n|         5.0|        3.4|         1.5|        0.2| Setosa|\n|         4.4|        2.9|         1.4|        0.2| Setosa|\n|         4.9|        3.1|         1.5|        0.1| Setosa|\n|         5.4|        3.7|         1.5|        0.2| Setosa|\n|         4.8|        3.4|         1.6|        0.2| Setosa|\n|         4.8|        3.0|         1.4|        0.1| Setosa|\n|         4.3|        3.0|         1.1|        0.1| Setosa|\n|         5.8|        4.0|         1.2|        0.2| Setosa|\n|         5.7|        4.4|         1.5|        0.4| Setosa|\n|         5.4|        3.9|         1.3|        0.4| Setosa|\n|         5.1|        3.5|         1.4|        0.3| Setosa|\n|         5.7|        3.8|         1.7|        0.3| Setosa|\n|         5.1|        3.8|         1.5|        0.3| Setosa|\n+------------+-----------+------------+-----------+-------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642526108230_496442906",
+      "id": "20160114-002321_1001583714",
+      "dateCreated": "2022-01-18 17:15:08.230",
+      "status": "READY"
+    },
+    {
+      "text": "%md\n## 6 - SparkSQL: Use a SQL statement directly to query the data\nTry to get the maximum, minimum, and average of ``sepal_length`` variable grouped by ``variety``.\n\n*Hint*: user ``MAX()``, ``MIN()``, ``AVG()`` method to compute the average. ",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 17:15:08.230",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e6 - SparkSQL: Use a SQL statement directly to query the data\u003c/h2\u003e\n\u003cp\u003eTry to get the maximum, minimum, and average of \u003ccode\u003esepal_length\u003c/code\u003e variable grouped by \u003ccode\u003evariety\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eHint\u003c/em\u003e: user \u003ccode\u003eMAX()\u003c/code\u003e, \u003ccode\u003eMIN()\u003c/code\u003e, \u003ccode\u003eAVG()\u003c/code\u003e method to compute the average.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642526108230_1652828891",
+      "id": "paragraph_1642524646120_1084213170",
+      "dateCreated": "2022-01-18 17:15:08.230",
+      "status": "READY"
+    },
+    {
+      "title": "7 - SparkSQL On DataFrame ",
+      "text": "%sql\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 17:15:35.608",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "max": "string",
+                      "min": "string",
+                      "average": "string",
+                      "variety": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "avg(CAST(sepal.length AS DOUBLE))",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "variety",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "country": "string",
+                      "nb": "string"
+                    },
+                    "updated": true
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [
+            {
+              "name": "nb",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "yAxis": {
+              "name": "nb",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "max\tmin\taverage\tvariety\n7.9\t4.9\t6.587999999999998\tVirginica\n5.8\t4.3\t5.005999999999999\tSetosa\n7.0\t4.9\t5.936\tVersicolor\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642526108230_1637875488",
+      "id": "20160114-002054_842505952",
+      "dateCreated": "2022-01-18 17:15:08.230",
+      "status": "READY"
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2022-01-18 17:15:08.230",
+      "progress": 0,
+      "config": {
+        "editorSetting": {},
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1642526108230_1299526876",
+      "id": "20160114-093455_823181330",
+      "dateCreated": "2022-01-18 17:15:08.230",
+      "status": "READY"
+    }
+  ],
+  "name": "SparkDataframe_exercise_solution",
+  "id": "2GS8GZW47",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
